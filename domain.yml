@@ -1,0 +1,54 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_about_fellowship
+  - ask_benefits
+  - ask_deadline
+  - ask_duration
+  - ask_eligibility
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_about_fellowship:
+  - text: "Our Fellowship Program is a 6-month learning and innovation initiative designed to help selected fellows gain hands-on experience, mentorship, and real-world project exposure."
+
+  utter_benefits:
+  - text: "Fellows receive mentorship, hands-on project experience, certification, networking opportunities, and a monthly stipend."
+  
+  utter_deadline:
+  - text: "Applications typically close on the last day"
+
+  utter_duration:
+  - text: "The fellowship duration is 6 months, including training, mentorship, and project phases."
+
+  utter_eligibility:
+  - text: "Anyone between the ages of 18 to 30 with a passion for learning, innovation, and community impact can apply. No prior experience is required."
+  
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
