@@ -1,123 +1,74 @@
 version: "3.1"
 
 nlu:
-- intent: greet
+- intent: faq/career_in_ai
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - What does a career in AI look like?
+    - How does an AI career look?
+    - What kind of career can I expect in AI?
 
-- intent: ask_about_fellowship
+- intent: faq/placement_opportunities
   examples: |
-    - what is this fellowship about?
-    - give me information about the fellowship
-    - what does this fellowship offer
-    - what is the purpose of the fellowship
+    - Can candidates apply for placement positions at Fusemachines or other companies?
+    - Do you offer placement opportunities?
+    - Is there job placement after the program?
 
-- intent: ask_eligibility
+- intent: faq/long_term_career
   examples: |
-    - who can apply for this program?
-    - what are the qualifications needed?
-    - Do you need to be of science background?
-    - am I eligible for the fellowship?
+    - What can I expect in terms of long-term career and employment opportunities?
+    - What are the long-term job prospects?
+    - Will this program help me in my long-term career?
 
-- intent: ask_duration
+- intent: faq/program_duration
   examples: |
-    - how long is the program?
-    - is the fellowship of 6 months?
+    - What is the duration of the program?
+    - How long is the program?
+    - How many months does the program run?
 
-- intent: ask_benefits
+- intent: faq/preparation_courses
   examples: |
-    - is the fellowship paid?
-    - do we get an internship after?
-    - what are the benefits?
+    - Are there any courses I can take in preparation for the program?
+    - How can I prepare before joining the program?
+    - What should I study before enrolling?
 
-- intent: ask_deadline
+- intent: faq/ai_jobs_nepal
   examples: |
-    - what is the deadline
-    - last date to apply
-    - when does application close
+    - What is the supply and demand of AI jobs in Nepal and beyond?
+    - Are AI jobs available in Nepal?
+    - What is the job market like for AI in Nepal?
 
-    
-- intent: goodbye
+- intent: faq/education_requirement
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - What educational or professional background is required for enrollment?
+    - What background do I need to join the program?
+    - What are the prerequisites for the program?
 
-- intent: affirm
+- intent: faq/project_types
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - What kinds of projects will I be working on?
+    - What type of projects are included?
+    - Describe the projects in the program.
 
-- intent: deny
+- intent: faq/accreditation
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - Are the courses accredited?
+    - Is the program recognized?
+    - Are these certifications accredited?
 
-- intent: mood_great
+- intent: faq/class_recording
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - Are classes recorded if I cannot join?
+    - Can I attend classes remotely?
+    - What if I miss a class?
 
-- intent: mood_unhappy
+- intent: faq/project_work_requirement
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - Do we have to do any project work?
+    - Is project work mandatory?
+    - Will there be hands-on projects?
 
-- intent: bot_challenge
+- intent: faq/session_time
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - At what time will the sessions be held?
+    - When are the classes scheduled?
+    - What are the class timings?

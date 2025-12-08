@@ -1,38 +1,6 @@
 version: "3.1"
-
 rules:
-
-- rule: Say goodbye anytime the user says goodbye
+- rule: respond to FAQs
   steps:
-    - intent: goodbye
-    - action: utter_goodbye
-
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-    - intent: bot_challenge
-    - action: utter_iamabot
-
-- rule: answer about fellowship
-  steps:
-    - intent: ask_about_fellowship
-    - action: utter_about_fellowship
-
-- rule: answer eligibility
-  steps:
-    - intent: ask_eligibility
-    - action: utter_eligibility
-
-- rule: answer duration
-  steps:
-    - intent: ask_duration
-    - action: utter_duration
-
-- rule: answer benefits
-  steps:
-    - intent: ask_benefits
-    - action: utter_benefits
-
-- rule: deadline rule
-  steps:
-    - intent: ask_deadline
-    - action: utter_deadline
+    - intent: faq
+    - action: respond_faq
