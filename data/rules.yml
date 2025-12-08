@@ -1,5 +1,11 @@
 version: "3.1"
+
 rules:
+- rule: Say hello anytime the user greets
+  steps:
+  - intent: greet
+  - action: utter_greet
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -10,8 +16,17 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Respond to all FAQs using Response Selector
+- rule: Respond to all FAQs
   steps:
   - intent: faq
-  - action: uttter_faq
+  - action: utter_faq
 
+- rule: Provide application process info
+  steps:
+  - intent: ask_application_process
+  - action: utter_application_process
+
+- rule: Provide deadline info
+  steps:
+  - intent: ask_deadline
+  - action: utter_deadline
