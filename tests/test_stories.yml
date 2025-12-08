@@ -1,6 +1,8 @@
 #### This file contains tests to evaluate that your bot behaves as expected.
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
+version: "3.1"
+
 stories:
 - story: happy path 1
   steps:
@@ -60,28 +62,12 @@ stories:
     intent: deny
   - action: utter_goodbye
 
-- story: sad path 3
+- story: FAQ test
   steps:
   - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
-
-- story: say goodbye
-  steps:
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+      What is the program duration?
+    intent: faq/program_duration
+  - action: utter_faq
 
 - story: bot challenge
   steps:

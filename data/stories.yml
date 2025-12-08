@@ -35,3 +35,26 @@ stories:
     - action: utter_application_process
     - intent: ask_deadline
     - action: utter_deadline
+    
+- story: greeting then FAQ
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: faq
+  - action: utter_faq
+
+- story: multiple FAQs
+  steps:
+  - intent: faq
+  - action: utter_faq
+  - intent: faq
+  - action: utter_faq
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: FAQ then application
+  steps:
+  - intent: faq
+  - action: utter_faq
+  - intent: ask_application_process
+  - action: utter_application_process

@@ -1,74 +1,214 @@
 version: "3.1"
 
 nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - hi there
+    - greetings
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - see you
+    - talk to you later
+    - got to go
+    - bye bye
+    - catch you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - yeah
+    - yep
+    - sure
+    - of course
+    - that sounds good
+    - correct
+    - yes please
+    - absolutely
+
+- intent: deny
+  examples: |
+    - no
+    - nope
+    - not really
+    - no thanks
+    - I don't think so
+    - not at all
+    - never
+    - no way
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I'm good
+    - excellent
+    - fantastic
+
+- intent: mood_unhappy
+  examples: |
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - terrible
+    - very terrible
+    - bad
+    - awful
+    - not great
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - are you real?
+    - is this a bot?
+
+- intent: ask_application_process
+  examples: |
+    - How do I apply?
+    - What is the application process?
+    - How can I apply for the program?
+    - Tell me about the application
+    - I want to apply
+    - Application process
+    - How to enroll?
+
+- intent: ask_deadline
+  examples: |
+    - What is the deadline?
+    - When is the application deadline?
+    - When should I apply by?
+    - Application deadline
+    - Last date to apply
+    - When does the application close?
+
 - intent: faq/career_in_ai
   examples: |
     - What does a career in AI look like?
     - How does an AI career look?
     - What kind of career can I expect in AI?
+    - Tell me about AI careers
+    - What jobs are available in AI?
+    - Career prospects in AI
+    - AI career opportunities
 
 - intent: faq/placement_opportunities
   examples: |
     - Can candidates apply for placement positions at Fusemachines or other companies?
     - Do you offer placement opportunities?
     - Is there job placement after the program?
+    - Will you help me get a job?
+    - Placement assistance
+    - Job placement support
+    - Do you help with job placement?
 
 - intent: faq/long_term_career
   examples: |
     - What can I expect in terms of long-term career and employment opportunities?
     - What are the long-term job prospects?
     - Will this program help me in my long-term career?
+    - Career opportunities after the program
+    - Long term career growth
+    - Future career prospects
 
 - intent: faq/program_duration
   examples: |
     - What is the duration of the program?
     - How long is the program?
     - How many months does the program run?
+    - Program length
+    - How long does it take?
+    - Course duration
+    - Time required for completion
 
 - intent: faq/preparation_courses
   examples: |
     - Are there any courses I can take in preparation for the program?
     - How can I prepare before joining the program?
     - What should I study before enrolling?
+    - How to prepare?
+    - Preparation required
+    - Prerequisites
+    - What do I need to know beforehand?
 
 - intent: faq/ai_jobs_nepal
   examples: |
     - What is the supply and demand of AI jobs in Nepal and beyond?
     - Are AI jobs available in Nepal?
     - What is the job market like for AI in Nepal?
+    - AI jobs in Nepal
+    - Job market in Nepal
+    - AI opportunities in Nepal
 
 - intent: faq/education_requirement
   examples: |
     - What educational or professional background is required for enrollment?
     - What background do I need to join the program?
     - What are the prerequisites for the program?
+    - Education requirements
+    - What qualifications do I need?
+    - Entry requirements
+    - Academic background needed
 
 - intent: faq/project_types
   examples: |
     - What kinds of projects will I be working on?
     - What type of projects are included?
-    - Describe the projects in the program.
+    - Describe the projects in the program
+    - What projects will I do?
+    - Tell me about the projects
+    - Project work details
 
 - intent: faq/accreditation
   examples: |
     - Are the courses accredited?
     - Is the program recognized?
     - Are these certifications accredited?
+    - Is it certified?
+    - Official certification
+    - Recognition of certificate
 
 - intent: faq/class_recording
   examples: |
     - Are classes recorded if I cannot join?
     - Can I attend classes remotely?
     - What if I miss a class?
+    - Recording availability
+    - Can I watch later?
+    - Are sessions recorded?
 
 - intent: faq/project_work_requirement
   examples: |
     - Do we have to do any project work?
     - Is project work mandatory?
     - Will there be hands-on projects?
+    - Are projects required?
+    - Do I need to complete projects?
+    - Project requirements
 
 - intent: faq/session_time
   examples: |
     - At what time will the sessions be held?
     - When are the classes scheduled?
     - What are the class timings?
+    - Class schedule
+    - Session timings
+    - What time are classes?
