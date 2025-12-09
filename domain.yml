@@ -1,6 +1,7 @@
 version: "3.1"
 
 intents:
+  # General intents
   - greet
   - goodbye
   - affirm
@@ -8,16 +9,143 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - faq
+  # FAQ intents - each as separate intent
+  - ask_application_process
+  - ask_application_deadline
+  - ask_career_in_ai
+  - ask_placement_opportunities
+  - ask_long_term_career
+  - ask_program_duration
+  - ask_preparation_courses
+  - ask_ai_jobs_nepal
+  - ask_education_requirement
+  - ask_project_types
+  - ask_accreditation
+  - ask_class_recording
+  - ask_project_work_requirement
+  - ask_session_time
 
+entities: []
+
+slots: {}
+
+responses:
+  # General responses
+  utter_greet:
+    - text: "Hello! How can I help you today?"
+    - text: "Hi there! What can I assist you with?"
+    - text: "Hey! How may I help you?"
+
+  utter_goodbye:
+    - text: "Goodbye! Let me know if you need anything else."
+    - text: "See you later! Feel free to reach out anytime."
+    - text: "Take care! Don't hesitate to ask if you have more questions."
+
+  utter_iamabot:
+    - text: "I'm a chatbot here to help you with information about our AI program!"
+    - text: "Yes, I'm a bot designed to answer your questions about the program."
+
+  utter_mood_great:
+    - text: "That's awesome to hear!"
+    - text: "Wonderful! I'm glad you're doing great!"
+    - text: "That's fantastic!"
+
+  utter_mood_unhappy:
+    - text: "I'm sorry you're feeling that way. Can I help cheer you up with some information about our program?"
+    - text: "I'm sorry to hear that. Is there anything I can help you with?"
+
+  # FAQ responses - each intent has its own response
+  utter_ask_application_process:
+    - text: "You can apply by filling out the online application form on our website. It's quick and straightforward."
+    - text: "The application happens fully online—just complete the form on our website and you're all set to begin."
+    - text: "To apply, simply submit the online application form on our website. It only takes a few minutes."
+
+  utter_ask_application_deadline:
+    - text: "The application deadline is December 31, 2025. Make sure to submit all required documents before then."
+    - text: "You can apply until December 31, 2025. Just ensure your documents are uploaded before the deadline."
+    - text: "Applications close on December 31, 2025. Try to complete everything ahead of time for peace of mind."
+
+  utter_ask_career_in_ai:
+    - text: "AI offers exciting career paths in machine learning, NLP, data science, and more—opportunities are growing rapidly in Nepal and worldwide."
+    - text: "A career in AI opens doors to fields like ML, NLP, and computer vision. It's one of the fastest-growing areas globally."
+    - text: "AI is a strong career choice with growing opportunities in Nepal and internationally across ML, data science, and automation."
+
+  utter_ask_placement_opportunities:
+    - text: "We offer placement support after the program, including guidance and opportunities with Fusemachines and partner organizations."
+    - text: "You'll receive placement guidance and access to opportunities from Fusemachines and its partners once you complete the program."
+    - text: "Our team supports you with placements after graduation, including options with Fusemachines and affiliated companies."
+
+  utter_ask_long_term_career:
+    - text: "This program builds strong foundational skills that support long-term growth in AI and related fields."
+    - text: "We designed the program to help you grow steadily in the AI industry and build a sustainable long-term career."
+    - text: "The skills you learn here set you up for long-term success in AI, tech, and data-driven roles."
+
+  utter_ask_program_duration:
+    - text: "The program runs for 6 months, including hands-on projects and live sessions."
+    - text: "It's a 6-month program that includes interactive sessions and practical project work."
+    - text: "The full program lasts 6 months, with classes and project milestones throughout."
+
+  utter_ask_preparation_courses:
+    - text: "Basic programming and math skills are helpful. We also provide prep resources before the program starts."
+    - text: "Some familiarity with programming and math is recommended. You'll receive prep materials to get ready."
+    - text: "You should know basic programming and math, but don't worry—prep content is provided beforehand."
+
+  utter_ask_ai_jobs_nepal:
+    - text: "AI roles are increasing in Nepal, especially in ML, data analytics, and automation. Global opportunities are even broader."
+    - text: "AI jobs are growing across Nepal and worldwide. Skills in ML and data science are especially valued."
+    - text: "There's high demand for AI talent both in Nepal and globally, particularly in ML, data, and automation roles."
+
+  utter_ask_education_requirement:
+    - text: "Applicants with relevant academic or professional experience can join. Basic programming knowledge is preferred."
+    - text: "You're eligible if you have a related background and some programming experience. It doesn't need to be advanced."
+    - text: "We welcome applicants with suitable academic or work experience. Knowing basic programming is helpful."
+
+  utter_ask_project_types:
+    - text: "You'll work on hands-on AI projects that help you apply what you learn. These projects are an essential part of the program."
+    - text: "The program includes practical projects where you apply real AI concepts, and they count toward completion."
+    - text: "You'll complete applied AI projects during the program, which help you build real-world skills."
+
+  utter_ask_accreditation:
+    - text: "The program is accredited, and the certification you receive is officially recognized."
+    - text: "Yes, the program is accredited and the certificate you earn is formally recognized."
+    - text: "Your certification is officially recognized because the program is accredited."
+
+  utter_ask_class_recording:
+    - text: "All sessions are recorded, so you can revisit them anytime or catch up if you miss a class."
+    - text: "Class recordings are available for all sessions, making it easy to review or catch up later."
+    - text: "Every class is recorded and accessible afterward if you need to watch it later."
+
+  utter_ask_project_work_requirement:
+    - text: "Project work is required—you'll complete hands-on projects that strengthen your understanding."
+    - text: "Yes, projects are mandatory. They help you apply concepts in a practical way."
+    - text: "You'll need to complete project work as part of the program. It's designed to build real experience."
+
+  utter_ask_session_time:
+    - text: "Session timings are shared after enrollment. Classes follow a consistent schedule and recordings are always available."
+    - text: "You'll receive the class schedule once you enroll. Sessions happen regularly and are recorded for later viewing."
+    - text: "Timings are provided after enrollment. Don't worry—every session is recorded for flexibility."
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_iamabot
+  - utter_mood_great
+  - utter_mood_unhappy
+  - utter_ask_application_process
+  - utter_ask_application_deadline
+  - utter_ask_career_in_ai
+  - utter_ask_placement_opportunities
+  - utter_ask_long_term_career
+  - utter_ask_program_duration
+  - utter_ask_preparation_courses
+  - utter_ask_ai_jobs_nepal
+  - utter_ask_education_requirement
+  - utter_ask_project_types
+  - utter_ask_accreditation
+  - utter_ask_class_recording
+  - utter_ask_project_work_requirement
+  - utter_ask_session_time
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
-# ResponseSelector configuration (required in domain)
-response_selectors:
-  faq:
-    retrieval_intent: faq
-    # optional: config for how many top responses to predict
-    # e.g., top_k: 1

@@ -3,69 +3,159 @@ version: "3.1"
 stories:
 
 # ----------------------------
-# Happy path
+# Happy path test
 # ----------------------------
-- story: happy path
+- story: happy path test
   steps:
-    - intent: greet
+    - user: |
+        hello
+      intent: greet
     - action: utter_greet
-    - intent: mood_great
-    - action: utter_happy
+    - user: |
+        I'm feeling great
+      intent: mood_great
+    - action: utter_mood_great
 
 # ----------------------------
-# Sad path with cheer up and user agrees
+# Sad path tests
 # ----------------------------
-- story: sad path 1
+- story: sad path 1 test
   steps:
-    - intent: greet
+    - user: |
+        hi there
+      intent: greet
     - action: utter_greet
-    - intent: mood_unhappy
-    - action: utter_cheer_up
-    - action: utter_did_that_help
-    - intent: affirm
-    - action: utter_happy
+    - user: |
+        I'm feeling sad
+      intent: mood_unhappy
+    - action: utter_mood_unhappy
+    - user: |
+        yes
+      intent: affirm
+    - action: utter_mood_great
 
-# ----------------------------
-# Sad path with cheer up and user denies
-# ----------------------------
-- story: sad path 2
+- story: sad path 2 test
   steps:
-    - intent: greet
+    - user: |
+        hey
+      intent: greet
     - action: utter_greet
-    - intent: mood_unhappy
-    - action: utter_cheer_up
-    - action: utter_did_that_help
-    - intent: deny
+    - user: |
+        not good
+      intent: mood_unhappy
+    - action: utter_mood_unhappy
+    - user: |
+        no
+      intent: deny
     - action: utter_goodbye
 
 # ----------------------------
-# Greeting then FAQ
+# FAQ tests
 # ----------------------------
-- story: greeting then FAQ
+- story: application process test
   steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: faq
-    - action: response_selector_faq
+    - user: |
+        How do I apply?
+      intent: ask_application_process
+    - action: utter_ask_application_process
 
-# ----------------------------
-# Multiple FAQs in a row
-# ----------------------------
-- story: multiple FAQs
+- story: application deadline test
   steps:
-    - intent: faq
-    - action: response_selector_faq
-    - intent: faq
-    - action: response_selector_faq
-    - intent: goodbye
+    - user: |
+        What is the deadline?
+      intent: ask_application_deadline
+    - action: utter_ask_application_deadline
+
+- story: career in AI test
+  steps:
+    - user: |
+        Tell me about AI careers
+      intent: ask_career_in_ai
+    - action: utter_ask_career_in_ai
+
+- story: placement opportunities test
+  steps:
+    - user: |
+        Will you help me get a job?
+      intent: ask_placement_opportunities
+    - action: utter_ask_placement_opportunities
+
+- story: program duration test
+  steps:
+    - user: |
+        How long is the program?
+      intent: ask_program_duration
+    - action: utter_ask_program_duration
+
+- story: multiple FAQs test
+  steps:
+    - user: |
+        What is the duration of the program?
+      intent: ask_program_duration
+    - action: utter_ask_program_duration
+    - user: |
+        When is the application deadline?
+      intent: ask_application_deadline
+    - action: utter_ask_application_deadline
+    - user: |
+        goodbye
+      intent: goodbye
     - action: utter_goodbye
 
-# ----------------------------
-# FAQ then another FAQ (previously app process)
-# ----------------------------
-- story: FAQ then application
+- story: education requirement test
   steps:
-    - intent: faq
-    - action: response_selector_faq
-    - intent: faq
-    - action: response_selector_faq
+    - user: |
+        What qualifications do I need?
+      intent: ask_education_requirement
+    - action: utter_ask_education_requirement
+
+- story: project types test
+  steps:
+    - user: |
+        What kinds of projects will I be working on?
+      intent: ask_project_types
+    - action: utter_ask_project_types
+
+- story: accreditation test
+  steps:
+    - user: |
+        Are the courses accredited?
+      intent: ask_accreditation
+    - action: utter_ask_accreditation
+
+- story: class recording test
+  steps:
+    - user: |
+        Are classes recorded if I cannot join?
+      intent: ask_class_recording
+    - action: utter_ask_class_recording
+
+- story: session time test
+  steps:
+    - user: |
+        At what time will the sessions be held?
+      intent: ask_session_time
+    - action: utter_ask_session_time
+
+- story: full conversation test
+  steps:
+    - user: |
+        hello
+      intent: greet
+    - action: utter_greet
+    - user: |
+        How long is the program?
+      intent: ask_program_duration
+    - action: utter_ask_program_duration
+    - user: |
+        What is the deadline?
+      intent: ask_application_deadline
+    - action: utter_ask_application_deadline
+    - user: |
+        great thanks
+      intent: mood_great
+    - action: utter_mood_great
+    - user: |
+        bye
+      intent: goodbye
+    - action: utter_goodbye

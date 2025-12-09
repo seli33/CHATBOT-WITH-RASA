@@ -20,8 +20,3 @@ rules:
     - intent: bot_challenge
     - action: utter_iamabot
 
-# FAQ handling with ResponseSelector
-- rule: Respond to FAQ questions
-  steps:
-    - intent: faq
-    - action: response_selector_faq

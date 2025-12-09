@@ -1,106 +1,161 @@
-#### This file contains tests to evaluate that your bot behaves as expected.
-#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
-
 version: "3.1"
 
 stories:
 
 # ----------------------------
-# Happy path 1
+# Happy path test
 # ----------------------------
-- story: happy path 1
-  steps:
-    - user: |
-        hello there!
-      intent: greet
-    - action: utter_greet
-    - user: |
-        amazing
-      intent: mood_great
-    - action: utter_happy
-
-# ----------------------------
-# Happy path 2 with goodbye
-# ----------------------------
-- story: happy path 2
-  steps:
-    - user: |
-        hello there!
-      intent: greet
-    - action: utter_greet
-    - user: |
-        amazing
-      intent: mood_great
-    - action: utter_happy
-    - user: |
-        bye-bye!
-      intent: goodbye
-    - action: utter_goodbye
-
-# ----------------------------
-# Sad path 1 (user agrees)
-# ----------------------------
-- story: sad path 1
+- story: happy path test
   steps:
     - user: |
         hello
       intent: greet
     - action: utter_greet
     - user: |
-        not good
+        I'm feeling great
+      intent: mood_great
+    - action: utter_mood_great
+
+# ----------------------------
+# Sad path tests
+# ----------------------------
+- story: sad path 1 test
+  steps:
+    - user: |
+        hi there
+      intent: greet
+    - action: utter_greet
+    - user: |
+        I'm feeling sad
       intent: mood_unhappy
-    - action: utter_cheer_up
-    - action: utter_did_that_help
+    - action: utter_mood_unhappy
     - user: |
         yes
       intent: affirm
-    - action: utter_happy
+    - action: utter_mood_great
 
-# ----------------------------
-# Sad path 2 (user denies)
-# ----------------------------
-- story: sad path 2
+- story: sad path 2 test
   steps:
     - user: |
-        hello
+        hey
       intent: greet
     - action: utter_greet
     - user: |
         not good
       intent: mood_unhappy
-    - action: utter_cheer_up
-    - action: utter_did_that_help
+    - action: utter_mood_unhappy
     - user: |
-        not really
+        no
       intent: deny
     - action: utter_goodbye
 
 # ----------------------------
-# FAQ test (ResponseSelector)
+# FAQ tests
 # ----------------------------
-- story: FAQ test - program duration
+- story: application process test
   steps:
     - user: |
-        What is the program duration?
-      intent: faq
-    - action: response_selector_faq
+        How do I apply?
+      intent: ask_application_process
+    - action: utter_ask_application_process
 
-# ----------------------------
-# FAQ test - application process
-# ----------------------------
-- story: FAQ test - application process
+- story: application deadline test
   steps:
     - user: |
-        How can I apply for the program?
-      intent: faq
-    - action: response_selector_faq
+        What is the deadline?
+      intent: ask_application_deadline
+    - action: utter_ask_application_deadline
 
-# ----------------------------
-# Bot challenge
-# ----------------------------
-- story: bot challenge
+- story: career in AI test
   steps:
     - user: |
-        are you a bot?
-      intent: bot_challenge
-    - action: utter_iamabot
+        Tell me about AI careers
+      intent: ask_career_in_ai
+    - action: utter_ask_career_in_ai
+
+- story: placement opportunities test
+  steps:
+    - user: |
+        Will you help me get a job?
+      intent: ask_placement_opportunities
+    - action: utter_ask_placement_opportunities
+
+- story: program duration test
+  steps:
+    - user: |
+        How long is the program?
+      intent: ask_program_duration
+    - action: utter_ask_program_duration
+
+- story: multiple FAQs test
+  steps:
+    - user: |
+        What is the duration of the program?
+      intent: ask_program_duration
+    - action: utter_ask_program_duration
+    - user: |
+        When is the application deadline?
+      intent: ask_application_deadline
+    - action: utter_ask_application_deadline
+    - user: |
+        goodbye
+      intent: goodbye
+    - action: utter_goodbye
+
+- story: education requirement test
+  steps:
+    - user: |
+        What qualifications do I need?
+      intent: ask_education_requirement
+    - action: utter_ask_education_requirement
+
+- story: project types test
+  steps:
+    - user: |
+        What kinds of projects will I be working on?
+      intent: ask_project_types
+    - action: utter_ask_project_types
+
+- story: accreditation test
+  steps:
+    - user: |
+        Are the courses accredited?
+      intent: ask_accreditation
+    - action: utter_ask_accreditation
+
+- story: class recording test
+  steps:
+    - user: |
+        Are classes recorded if I cannot join?
+      intent: ask_class_recording
+    - action: utter_ask_class_recording
+
+- story: session time test
+  steps:
+    - user: |
+        At what time will the sessions be held?
+      intent: ask_session_time
+    - action: utter_ask_session_time
+
+- story: full conversation test
+  steps:
+    - user: |
+        hello
+      intent: greet
+    - action: utter_greet
+    - user: |
+        How long is the program?
+      intent: ask_program_duration
+    - action: utter_ask_program_duration
+    - user: |
+        What is the deadline?
+      intent: ask_application_deadline
+    - action: utter_ask_application_deadline
+    - user: |
+        great thanks
+      intent: mood_great
+    - action: utter_mood_great
+    - user: |
+        bye
+      intent: goodbye
+    - action: utter_goodbye

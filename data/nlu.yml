@@ -2,7 +2,6 @@ version: "3.1"
 
 nlu:
 
-
 # General intents
 
 - intent: greet
@@ -16,6 +15,8 @@ nlu:
     - hey there
     - hi there
     - greetings
+    - howdy
+    - what's up
 
 - intent: goodbye
   examples: |
@@ -27,6 +28,8 @@ nlu:
     - got to go
     - bye bye
     - catch you later
+    - take care
+    - until next time
 
 - intent: affirm
   examples: |
@@ -39,6 +42,9 @@ nlu:
     - correct
     - yes please
     - absolutely
+    - right
+    - indeed
+    - definitely
 
 - intent: deny
   examples: |
@@ -50,6 +56,8 @@ nlu:
     - not at all
     - never
     - no way
+    - nah
+    - negative
 
 - intent: mood_great
   examples: |
@@ -62,6 +70,9 @@ nlu:
     - I'm good
     - excellent
     - fantastic
+    - superb
+    - feeling awesome
+    - couldn't be better
 
 - intent: mood_unhappy
   examples: |
@@ -75,6 +86,8 @@ nlu:
     - bad
     - awful
     - not great
+    - feeling down
+    - depressed
 
 - intent: bot_challenge
   examples: |
@@ -84,12 +97,13 @@ nlu:
     - am I talking to a human?
     - are you real?
     - is this a bot?
+    - are you automated?
+    - are you a real person?
 
-# FAQ intent (for ResponseSelector)
+# FAQ intents - each topic gets its own intent
 
-- intent: faq
+- intent: ask_application_process
   examples: |
-    # Application process
     - How do I apply?
     - What is the application process?
     - How can I apply for the program?
@@ -97,16 +111,27 @@ nlu:
     - I want to apply
     - Application process
     - How to enroll?
+    - What are the steps to apply?
+    - How do I sign up?
+    - Where can I apply?
+    - Can you help me apply?
+    - I'd like to enroll
 
-    # Application deadline
+- intent: ask_application_deadline
+  examples: |
     - What is the deadline?
     - When is the application deadline?
     - When should I apply by?
     - Application deadline
     - Last date to apply
     - When does the application close?
+    - Until when can I apply?
+    - What's the last date?
+    - When do applications close?
+    - Is there a deadline?
 
-    # Career in AI
+- intent: ask_career_in_ai
+  examples: |
     - What does a career in AI look like?
     - How does an AI career look?
     - What kind of career can I expect in AI?
@@ -114,8 +139,12 @@ nlu:
     - What jobs are available in AI?
     - Career prospects in AI
     - AI career opportunities
+    - What can I do with AI?
+    - AI job options
+    - Career paths in artificial intelligence
 
-    # Placement / job support
+- intent: ask_placement_opportunities
+  examples: |
     - Can candidates apply for placement positions at Fusemachines or other companies?
     - Do you offer placement opportunities?
     - Is there job placement after the program?
@@ -123,16 +152,24 @@ nlu:
     - Placement assistance
     - Job placement support
     - Do you help with job placement?
+    - Will I get a job after this?
+    - What about placements?
+    - Job opportunities after completion
 
-    # Long-term career prospects
+- intent: ask_long_term_career
+  examples: |
     - What can I expect in terms of long-term career and employment opportunities?
     - What are the long-term job prospects?
     - Will this program help me in my long-term career?
     - Career opportunities after the program
     - Long term career growth
     - Future career prospects
+    - How will this help my career long term?
+    - Long-term employment opportunities
+    - Career growth potential
 
-    # Program duration
+- intent: ask_program_duration
+  examples: |
     - What is the duration of the program?
     - How long is the program?
     - How many months does the program run?
@@ -140,8 +177,12 @@ nlu:
     - How long does it take?
     - Course duration
     - Time required for completion
+    - How much time does the program take?
+    - Duration of the course
+    - Length of training
 
-    # Preparation / prerequisites
+- intent: ask_preparation_courses
+  examples: |
     - Are there any courses I can take in preparation for the program?
     - How can I prepare before joining the program?
     - What should I study before enrolling?
@@ -149,16 +190,24 @@ nlu:
     - Preparation required
     - Prerequisites
     - What do I need to know beforehand?
+    - How should I prepare?
+    - What can I study to get ready?
+    - Preparatory courses
 
-    # AI jobs in Nepal
+- intent: ask_ai_jobs_nepal
+  examples: |
     - What is the supply and demand of AI jobs in Nepal and beyond?
     - Are AI jobs available in Nepal?
     - What is the job market like for AI in Nepal?
     - AI jobs in Nepal
     - Job market in Nepal
     - AI opportunities in Nepal
+    - Are there AI positions in Nepal?
+    - Nepal AI job market
+    - AI demand in Nepal
 
-    # Education requirements
+- intent: ask_education_requirement
+  examples: |
     - What educational or professional background is required for enrollment?
     - What background do I need to join the program?
     - What are the prerequisites for the program?
@@ -166,43 +215,66 @@ nlu:
     - What qualifications do I need?
     - Entry requirements
     - Academic background needed
+    - Do I need a degree?
+    - What education is required?
+    - Eligibility criteria
 
-    # Project types
+- intent: ask_project_types
+  examples: |
     - What kinds of projects will I be working on?
     - What type of projects are included?
     - Describe the projects in the program
     - What projects will I do?
     - Tell me about the projects
     - Project work details
+    - What kind of project work?
+    - Types of projects
+    - Project examples
 
-    # Accreditation
+- intent: ask_accreditation
+  examples: |
     - Are the courses accredited?
     - Is the program recognized?
     - Are these certifications accredited?
     - Is it certified?
     - Official certification
     - Recognition of certificate
+    - Is this an accredited program?
+    - Will I get a recognized certificate?
+    - Is the certification valid?
 
-    # Class recordings
+- intent: ask_class_recording
+  examples: |
     - Are classes recorded if I cannot join?
     - Can I attend classes remotely?
     - What if I miss a class?
     - Recording availability
     - Can I watch later?
     - Are sessions recorded?
+    - Will classes be recorded?
+    - Can I access recordings?
+    - What if I can't attend live?
 
-    # Project work requirement
+- intent: ask_project_work_requirement
+  examples: |
     - Do we have to do any project work?
     - Is project work mandatory?
     - Will there be hands-on projects?
     - Are projects required?
     - Do I need to complete projects?
     - Project requirements
+    - Is project work compulsory?
+    - Must I do projects?
+    - Are projects part of the program?
 
-    # Session time
+- intent: ask_session_time
+  examples: |
     - At what time will the sessions be held?
     - When are the classes scheduled?
     - What are the class timings?
     - Class schedule
     - Session timings
     - What time are classes?
+    - When do classes happen?
+    - Schedule of sessions
+    - Class time slots
