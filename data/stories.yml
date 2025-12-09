@@ -2,59 +2,70 @@ version: "3.1"
 
 stories:
 
+# ----------------------------
+# Happy path
+# ----------------------------
 - story: happy path
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_great
+    - action: utter_happy
 
+# ----------------------------
+# Sad path with cheer up and user agrees
+# ----------------------------
 - story: sad path 1
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_unhappy
+    - action: utter_cheer_up
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_happy
 
+# ----------------------------
+# Sad path with cheer up and user denies
+# ----------------------------
 - story: sad path 2
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+    - intent: greet
+    - action: utter_greet
+    - intent: mood_unhappy
+    - action: utter_cheer_up
+    - action: utter_did_that_help
+    - intent: deny
+    - action: utter_goodbye
 
-- story: user wants to apply
-  steps:
-    - intent: ask_application_process
-    - action: utter_application_process
-    - intent: ask_deadline
-    - action: utter_deadline
-    
+# ----------------------------
+# Greeting then FAQ
+# ----------------------------
 - story: greeting then FAQ
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: faq
-  - action: utter_faq
+    - intent: greet
+    - action: utter_greet
+    - intent: faq
+    - action: response_selector_faq
 
+# ----------------------------
+# Multiple FAQs in a row
+# ----------------------------
 - story: multiple FAQs
   steps:
-  - intent: faq
-  - action: utter_faq
-  - intent: faq
-  - action: utter_faq
-  - intent: goodbye
-  - action: utter_goodbye
+    - intent: faq
+    - action: response_selector_faq
+    - intent: faq
+    - action: response_selector_faq
+    - intent: goodbye
+    - action: utter_goodbye
 
+# ----------------------------
+# FAQ then another FAQ (previously app process)
+# ----------------------------
 - story: FAQ then application
   steps:
-  - intent: faq
-  - action: utter_faq
-  - intent: ask_application_process
-  - action: utter_application_process
+    - intent: faq
+    - action: response_selector_faq
+    - intent: faq
+    - action: response_selector_faq

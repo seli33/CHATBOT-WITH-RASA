@@ -4,74 +4,103 @@
 version: "3.1"
 
 stories:
+
+# ----------------------------
+# Happy path 1
+# ----------------------------
 - story: happy path 1
   steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+    - user: |
+        hello there!
+      intent: greet
+    - action: utter_greet
+    - user: |
+        amazing
+      intent: mood_great
+    - action: utter_happy
 
+# ----------------------------
+# Happy path 2 with goodbye
+# ----------------------------
 - story: happy path 2
   steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+    - user: |
+        hello there!
+      intent: greet
+    - action: utter_greet
+    - user: |
+        amazing
+      intent: mood_great
+    - action: utter_happy
+    - user: |
+        bye-bye!
+      intent: goodbye
+    - action: utter_goodbye
 
+# ----------------------------
+# Sad path 1 (user agrees)
+# ----------------------------
 - story: sad path 1
   steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
+    - user: |
+        hello
+      intent: greet
+    - action: utter_greet
+    - user: |
+        not good
+      intent: mood_unhappy
+    - action: utter_cheer_up
+    - action: utter_did_that_help
+    - user: |
+        yes
+      intent: affirm
+    - action: utter_happy
 
+# ----------------------------
+# Sad path 2 (user denies)
+# ----------------------------
 - story: sad path 2
   steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
+    - user: |
+        hello
+      intent: greet
+    - action: utter_greet
+    - user: |
+        not good
+      intent: mood_unhappy
+    - action: utter_cheer_up
+    - action: utter_did_that_help
+    - user: |
+        not really
+      intent: deny
+    - action: utter_goodbye
 
-- story: FAQ test
+# ----------------------------
+# FAQ test (ResponseSelector)
+# ----------------------------
+- story: FAQ test - program duration
   steps:
-  - user: |
-      What is the program duration?
-    intent: faq/program_duration
-  - action: utter_faq
+    - user: |
+        What is the program duration?
+      intent: faq
+    - action: response_selector_faq
 
+# ----------------------------
+# FAQ test - application process
+# ----------------------------
+- story: FAQ test - application process
+  steps:
+    - user: |
+        How can I apply for the program?
+      intent: faq
+    - action: response_selector_faq
+
+# ----------------------------
+# Bot challenge
+# ----------------------------
 - story: bot challenge
   steps:
-  - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
+    - user: |
+        are you a bot?
+      intent: bot_challenge
+    - action: utter_iamabot

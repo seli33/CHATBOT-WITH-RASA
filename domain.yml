@@ -8,42 +8,16 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - ask_application_process
-  - ask_deadline
   - faq
 
-responses:
-  utter_greet:
-    - text: "Hey! How can I help you today?"
-    - text: "Hello! What can I do for you?"
-    - text: "Hi there! How may I assist you?"
-
-  utter_goodbye:
-    - text: "Goodbye! Have a great day!"
-    - text: "Bye! Feel free to come back anytime."
-    - text: "See you later!"
-
-  utter_happy:
-    - text: "Great! I'm glad I could help."
-    - text: "Wonderful! Happy to assist."
-
-  utter_cheer_up:
-    - text: "Here's something to cheer you up:"
-    - text: "I'm sorry to hear that. Let me try to help."
-
-  utter_did_that_help:
-    - text: "Did that help you?"
-    - text: "Was that useful?"
-
-  utter_iamabot:
-    - text: "I am a bot, powered by Rasa and designed to help answer your questions about AI programs!"
-
-  utter_application_process:
-    - text: "To apply for the program, please visit our website and fill out the application form. You'll need to submit your educational background and a statement of interest."
-
-  utter_deadline:
-    - text: "Application deadlines vary by cohort. Please check our website for the most current deadline information, or contact our admissions team."
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+# ResponseSelector configuration (required in domain)
+response_selectors:
+  faq:
+    retrieval_intent: faq
+    # optional: config for how many top responses to predict
+    # e.g., top_k: 1

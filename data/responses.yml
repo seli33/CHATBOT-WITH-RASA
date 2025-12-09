@@ -1,38 +1,45 @@
 version: "3.1"
 
 responses:
-  utter_faq/career_in_ai:
-    - text: "A career in AI involves working with data, machine learning models, and intelligent systems to solve real-world problems across industries like healthcare, finance, robotics, and more."
 
-  utter_faq/placement_opportunities:
-    - text: "Yes, candidates may apply for placement positions at Fusemachines or partner companies depending on performance and availability."
+  faq/application_process:
+    - text: "You can apply by filling out the online application form on our website."
 
-  utter_faq/long_term_career:
-    - text: "Graduates often find opportunities in AI engineering, data science, ML operations, research, and industry-specific AI roles."
+  faq/application_deadline:
+    - text: "The application deadline is December 31, 2025. Submit all documents before this date."
 
-  utter_faq/program_duration:
-    - text: "The duration of the program varies, but is typically structured to run over several months with guided learning and projects."
+  faq/career_in_ai:
+    - text: "A career in AI offers opportunities in ML, NLP, computer vision, and data science. It’s growing globally and in Nepal."
 
-  utter_faq/preparation_courses:
-    - text: "You may prepare with math, Python programming, and introductory machine learning courses to build a strong foundation."
+  faq/placement_opportunities:
+    - text: "We provide placement support and guidance after the program, including opportunities with Fusemachines and partners."
 
-  utter_faq/ai_jobs_nepal:
-    - text: "AI jobs are increasing rapidly in Nepal and abroad as companies adopt automation and data-driven solutions."
+  faq/long_term_career:
+    - text: "The program helps you build skills for long-term career growth in AI and related fields."
 
-  utter_faq/education_requirement:
-    - text: "A technical or quantitative background is recommended, but motivated learners from other fields may also join depending on criteria."
+  faq/program_duration:
+    - text: "The program duration is [X months] including projects and sessions."
 
-  utter_faq/project_types:
-    - text: "You will work on hands-on AI and machine learning projects such as data analysis, model building, and real-world case studies."
+  faq/preparation_courses:
+    - text: "Basic programming and math knowledge is recommended. Preparatory resources are provided before the program."
 
-  utter_faq/accreditation:
-    - text: "Courses may come with industry-recognized certifications, depending on the specific program structure."
+  faq/ai_jobs_nepal:
+    - text: "AI jobs are in demand in Nepal and globally. Skills in ML, data science, and AI are highly sought after."
 
-  utter_faq/class_recording:
-    - text: "Yes, classes are typically recorded so students who cannot join live sessions can watch later. Some modules may support remote access."
+  faq/education_requirement:
+    - text: "Candidates with relevant academic or professional background can apply. Basic programming knowledge is preferred."
 
-  utter_faq/project_work_requirement:
-    - text: "Yes, project work is usually required as it helps you apply the concepts learned in real scenarios."
+  faq/project_types:
+    - text: "You will work on hands-on projects to apply AI concepts. Projects are mandatory for completion."
 
-  utter_faq/session_time:
-    - text: "Session times will be provided during enrollment and typically depend on the program batch and schedule."
+  faq/accreditation:
+    - text: "The program and certifications are officially recognized and accredited."
+
+  faq/class_recording:
+    - text: "All classes are recorded and can be accessed later if you miss a session."
+
+  faq/project_work_requirement:
+    - text: "Project work is mandatory. You will complete hands-on projects as part of the program."
+
+  faq/session_time:
+    - text: "Session timings will be shared upon enrollment. Classes are scheduled regularly and recorded."

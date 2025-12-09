@@ -1,32 +1,27 @@
 version: "3.1"
 
 rules:
+
+# Greet
 - rule: Say hello anytime the user greets
   steps:
-  - intent: greet
-  - action: utter_greet
+    - intent: greet
+    - action: utter_greet
 
+# Goodbye
 - rule: Say goodbye anytime the user says goodbye
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+    - intent: goodbye
+    - action: utter_goodbye
 
+# Bot challenge
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+    - intent: bot_challenge
+    - action: utter_iamabot
 
-- rule: Respond to all FAQs
+# FAQ handling with ResponseSelector
+- rule: Respond to FAQ questions
   steps:
-  - intent: faq
-  - action: utter_faq
-
-- rule: Provide application process info
-  steps:
-  - intent: ask_application_process
-  - action: utter_application_process
-
-- rule: Provide deadline info
-  steps:
-  - intent: ask_deadline
-  - action: utter_deadline
+    - intent: faq
+    - action: response_selector_faq
