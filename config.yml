@@ -1,5 +1,6 @@
 # The config recipe.
 # https://rasa.com/docs/rasa/model-configuration/
+version: "3.1"
 recipe: default.v1
 
 # The assistant project unique identifier
@@ -44,36 +45,40 @@ language: en
 
 
 
-version: "3.1"
 
-# ----------------------------
-# NLU pipeline
-# ----------------------------
+
+# NLU Pipeline - NO ResponseSelector
 pipeline:
   - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
   - name: DIETClassifier
     epochs: 100
-    intent_classification: True
-  - name: ResponseSelector
-    retrieval_intent: faq
-    epochs: 100
+    constrain_similarities: true
   - name: EntitySynonymMapper
-  - name: RegexFeaturizer
+  - name: FallbackClassifier
+    threshold: 0.6
+    ambiguity_threshold: 0.1
 
-# ----------------------------
-# Policies (Dialogue Management)
-# ----------------------------
+# Dialogue Management Policies
 policies:
   - name: RulePolicy
     core_fallback_threshold: 0.4
     core_fallback_action_name: "action_default_fallback"
-    enable_fallback_prediction: True
+    enable_fallback_prediction: true
   - name: MemoizationPolicy
     max_history: 5
   - name: TEDPolicy
     max_history: 5
     epochs: 100
+    constrain_similarities: true
+
+
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/

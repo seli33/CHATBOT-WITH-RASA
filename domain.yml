@@ -24,6 +24,7 @@ intents:
   - ask_class_recording
   - ask_project_work_requirement
   - ask_session_time
+  - nlu_fallback
 
 entities: []
 
@@ -125,6 +126,9 @@ responses:
     - text: "You'll receive the class schedule once you enroll. Sessions happen regularly and are recorded for later viewing."
     - text: "Timings are provided after enrollment. Don't worry—every session is recorded for flexibility."
 
+  utter_default:  # Fallback response
+    - text: "I'm sorry, I didn't quite understand that..."
+
 actions:
   - utter_greet
   - utter_goodbye
@@ -145,6 +149,8 @@ actions:
   - utter_ask_class_recording
   - utter_ask_project_work_requirement
   - utter_ask_session_time
+  - utter_default
+  - action_default_fallback
 
 session_config:
   session_expiration_time: 60
