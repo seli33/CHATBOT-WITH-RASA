@@ -1,5 +1,13 @@
-rasa_env/
-.rasa/
+# Python
 __pycache__/
-models/
-*.pyc
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+rasa_env/
+.venv/
+env/
+venv/
