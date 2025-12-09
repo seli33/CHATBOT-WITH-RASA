@@ -33,12 +33,12 @@ slots: {}
 responses:
   # General responses
   utter_greet:
-    - text: "Hi there! 👋 Welcome to our AI Program chatbot. How can I help you today?"
+    - text: "Hi there! Welcome to our AI Program chatbot. How can I help you today?"
     - text: "Hello! I'm here to answer your questions about our AI program. What would you like to know?"
     - text: "Hey! Great to see you here. Feel free to ask me anything about the program!"
 
   utter_goodbye:
-    - text: "Thanks for chatting! If you have more questions later, I'm always here to help. Good luck! 🚀"
+    - text: "Thanks for chatting! If you have more questions later, I'm always here to help. Good luck! "
     - text: "See you later! Feel free to come back anytime you need more information. Take care!"
     - text: "Goodbye! Don't hesitate to reach out if you think of more questions. Best wishes on your journey!"
 
@@ -47,12 +47,12 @@ responses:
     - text: "Yes, I'm a bot! But don't worry—I'm trained to give you accurate information about our program and help with your queries."
 
   utter_mood_great:
-    - text: "That's wonderful to hear! 😊 Now, how can I help you with the AI program?"
+    - text: "That's wonderful to hear!  Now, how can I help you with the AI program?"
     - text: "Amazing! I'm glad you're doing great. What would you like to know about our program?"
     - text: "That's fantastic! Let me know if you have any questions about joining us!"
 
   utter_mood_unhappy:
-    - text: "I'm sorry to hear that. 😔 Is there anything about our program I can help clarify or any concerns I can address?"
+    - text: "I'm sorry to hear that.Is there anything about our program I can help clarify or any concerns I can address?"
     - text: "I understand. Sometimes choosing the right program can feel overwhelming. How can I help make things clearer for you?"
 
   # FAQ responses - student-friendly and encouraging
@@ -67,70 +67,66 @@ responses:
     - text: "Mark your calendar! Applications close on December 31, 2025. The earlier you apply, the better—it gives you peace of mind and more time to prepare."
 
   utter_ask_career_in_ai:
-    - text: "AI is one of the most exciting fields right now! You could work in machine learning, natural language processing, data science, computer vision, and so much more. The opportunities are growing rapidly both in Nepal and globally—it's a great time to get into AI! 🚀"
+    - text: "AI is one of the most exciting fields right now! You could work in machine learning, natural language processing, data science, computer vision, and so much more. The opportunities are growing rapidly both in Nepal and globally—it's a great time to get into AI! "
     - text: "A career in AI opens up incredible possibilities! From developing smart applications to analyzing data and building AI models, there's a whole world of opportunities. The demand for AI professionals is booming worldwide, including right here in Nepal."
     - text: "Think of AI as your gateway to the future! Career paths include ML engineer, data scientist, AI researcher, NLP specialist, and more. It's one of the fastest-growing industries with amazing job prospects both locally and internationally."
 
   utter_ask_placement_opportunities:
-    - text: "Yes, we've got your back! After completing the program, you'll receive placement support and guidance. We work closely with Fusemachines and several partner companies to help connect our graduates with job opportunities. Your success is our priority! 💼"
+    - text: "Yes, we've got your back! After completing the program, you'll receive placement support and guidance. We work closely with Fusemachines and several partner companies to help connect our graduates with job opportunities. Your success is our priority! "
     - text: "Absolutely! We provide placement assistance to help you launch your career. You'll get access to opportunities with Fusemachines and our network of partner organizations. We're invested in seeing you succeed professionally."
     - text: "Great news—placement support is part of the package! Once you graduate, our team will help you with job placements through Fusemachines and affiliated companies. We want to see you thrive in your AI career!"
 
   utter_ask_long_term_career:
-    - text: "This program is designed to set you up for long-term success! You'll build a strong foundation in AI that can grow with you throughout your career. Whether you want to specialize further or move into leadership roles, the skills you learn here will serve you for years to come. 📈"
+    - text: "This program is designed to set you up for long-term success! You'll build a strong foundation in AI that can grow with you throughout your career. Whether you want to specialize further or move into leadership roles, the skills you learn here will serve you for years to come. "
     - text: "Think of this program as an investment in your future! The foundational skills you'll gain are built to last—they'll support your growth in AI and tech for the long haul. You'll be well-prepared for a sustainable and rewarding career."
     - text: "Long-term, you can expect solid career growth! Our program equips you with skills that remain relevant as the AI field evolves. Whether you pursue advanced roles, research, or entrepreneurship, you'll have the foundation to succeed."
 
   utter_ask_program_duration:
-    - text: "The program runs for 6 months. You'll have hands-on projects, live interactive sessions, and plenty of opportunities to build real-world skills. It's intensive but totally worth it! ⏱️"
+    - text: "The program runs for 6 months. You'll have hands-on projects, live interactive sessions, and plenty of opportunities to build real-world skills. It's intensive but totally worth it! "
     - text: "It's a 6-month journey packed with learning! Expect interactive sessions, practical projects, and milestone achievements throughout. The time flies when you're building cool AI stuff!"
     - text: "Plan for 6 months of immersive learning. The program includes live classes, project work, and hands-on experience—everything you need to get job-ready in AI."
 
   utter_ask_preparation_courses:
-    - text: "Good thinking! Having basic programming skills (like Python) and some math knowledge (especially linear algebra and statistics) will definitely help. But don't stress—we provide prep resources before the program starts to get everyone on the same page. 📚"
+    - text: "Good thinking! Having basic programming skills (like Python) and some math knowledge (especially linear algebra and statistics) will definitely help. But don't stress—we provide prep resources before the program starts to get everyone on the same page. "
     - text: "It's great that you're planning ahead! Some familiarity with programming and math concepts is recommended, but we've got you covered with preparatory materials. You'll receive everything you need to feel confident before day one."
     - text: "To hit the ground running, basic programming and math knowledge is helpful. The good news? We provide prep content beforehand so you can brush up on anything you need. Everyone starts the program feeling prepared!"
 
   utter_ask_ai_jobs_nepal:
-    - text: "AI jobs in Nepal are definitely on the rise! Companies are increasingly looking for talent in ML, data analytics, automation, and AI development. Plus, your skills will be valuable globally too—remote opportunities are abundant in this field! 🌏"
+    - text: "AI jobs in Nepal are definitely on the rise! Companies are increasingly looking for talent in ML, data analytics, automation, and AI development. Plus, your skills will be valuable globally too—remote opportunities are abundant in this field!"
     - text: "The AI job market in Nepal is growing fast! There's high demand for skilled professionals, especially in machine learning and data science. And the best part? Your skills open doors both locally and internationally."
     - text: "Nepal's tech scene is booming, and AI is at the forefront! Job opportunities are expanding in areas like ML, data analytics, and AI development. And with AI being a global field, you'll have options beyond Nepal too."
 
   utter_ask_education_requirement:
-    - text: "We welcome students with relevant academic backgrounds or professional experience. Basic programming knowledge is preferred, but you don't need to be an expert! If you're motivated to learn and have some foundation in tech or related fields, you're likely a good fit. 🎓"
+    - text: "We welcome students with relevant academic backgrounds or professional experience. Basic programming knowledge is preferred, but you don't need to be an expert! If you're motivated to learn and have some foundation in tech or related fields, you're likely a good fit. "
     - text: "You're eligible if you have a relevant educational background or work experience in tech or related fields. Some programming basics are helpful, but it doesn't need to be advanced. We're looking for passionate learners!"
     - text: "The requirements are pretty flexible! If you have academic or professional experience in a related area and know some basic programming, you should be good to go. We value curiosity and commitment just as much as credentials."
 
   utter_ask_project_types:
-    - text: "You'll work on real, hands-on AI projects throughout the program! These aren't just theoretical exercises—you'll be applying what you learn to build actual AI solutions. It's a fantastic way to build your portfolio and gain practical experience. 💻"
+    - text: "You'll work on real, hands-on AI projects throughout the program! These aren't just theoretical exercises—you'll be applying what you learn to build actual AI solutions. It's a fantastic way to build your portfolio and gain practical experience. "
     - text: "The projects are where the magic happens! You'll tackle practical AI challenges that mirror real-world problems. Think of it as learning by doing—you'll apply concepts, build models, and create solutions you can actually showcase to employers."
     - text: "Get ready for some exciting project work! You'll complete hands-on AI projects that help you master the material and build real skills. These projects become part of your portfolio and show potential employers what you can do."
 
   utter_ask_accreditation:
-    - text: "Yes, absolutely! The program is officially accredited, and the certificate you earn is recognized. It's a credential you can proudly add to your resume and LinkedIn profile! ✅"
+    - text: "Yes, absolutely! The program is officially accredited, and the certificate you earn is recognized. It's a credential you can proudly add to your resume and LinkedIn profile! "
     - text: "Great question! Yes, the program is accredited, which means your certificate carries weight. It's formally recognized and valued by employers in the industry."
     - text: "You bet! The program is accredited, so your certification is officially recognized. It's a legitimate credential that validates your AI skills and knowledge."
 
   utter_ask_class_recording:
-    - text: "Don't worry if you miss a class or want to review something! All sessions are recorded and available for you to watch anytime. You can catch up at your own pace or revisit topics whenever you need. 📹"
+    - text: "Don't worry if you miss a class or want to review something! All sessions are recorded and available for you to watch anytime. You can catch up at your own pace or revisit topics whenever you need. "
     - text: "Yes, every session is recorded! Life happens, and we get that. You'll have access to all class recordings so you can watch them later or review material as many times as you need."
     - text: "All classes are recorded for your convenience! Whether you miss a session or just want to go over something again, the recordings are there for you. Learn at your own pace!"
 
   utter_ask_project_work_requirement:
-    - text: "Yes, project work is mandatory—but in a good way! The projects are where you really learn and grow. They help you apply concepts hands-on and build practical skills that employers look for. Plus, they're a great addition to your portfolio! 🛠️"
+    - text: "Yes, project work is mandatory—but in a good way! The projects are where you really learn and grow. They help you apply concepts hands-on and build practical skills that employers look for. Plus, they're a great addition to your portfolio! "
     - text: "Projects are a required part of the program, and honestly, they're one of the best parts! You'll get to apply what you're learning in practical ways, which really helps everything click. It's how you build real-world experience."
     - text: "Yep, you'll need to complete projects as part of the program. But here's the thing—these projects are designed to be valuable learning experiences. They strengthen your understanding and give you tangible work to show future employers."
 
   utter_ask_session_time:
-    - text: "Class timings will be shared with you once you're enrolled. We try to keep a consistent schedule so you can plan your time. And remember, all sessions are recorded, so you have flexibility if something comes up! 🕐"
+    - text: "Class timings will be shared with you once you're enrolled. We try to keep a consistent schedule so you can plan your time. And remember, all sessions are recorded, so you have flexibility if something comes up! "
     - text: "You'll get the full schedule after enrollment. Classes happen on a regular schedule, and since everything's recorded, you won't miss out even if you can't attend live sometimes."
     - text: "The exact session times will be provided after you enroll. We maintain a consistent class schedule, and recordings are always available for added flexibility. You'll be able to balance your time effectively!"
 
-  utter_default:  # Fallback response - friendly and helpful
-    - text: "Hmm, I'm not quite sure I understood that. Could you rephrase your question? I'm here to help with info about applications, deadlines, program details, careers, and more! 🤔"
-    - text: "I didn't quite catch that—could you try asking in a different way? I'm great at answering questions about how to apply, program duration, job prospects, requirements, and other program details!"
-    - text: "Sorry, that one stumped me! 😅 Could you ask that differently? I can help with things like: application process, deadlines, career paths, course details, and placement opportunities."
-    - text: "I'm not sure I understood that correctly. Try asking me about topics like: how to apply, program length, AI careers in Nepal, prerequisites, or anything else about our program. I'm here to help!"
+  
 
 
 actions:
