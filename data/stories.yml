@@ -159,3 +159,9 @@ stories:
         bye
       intent: goodbye
     - action: utter_goodbye
+
+# Fallback handling story
+- story: Handle fallback with rephrasing
+  steps:
+    - intent: nlu_fallback
+    - action: action_default_fallback
