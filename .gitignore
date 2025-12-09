@@ -11,3 +11,4 @@ rasa_env/
 .venv/
 env/
 venv/
+.rasa/
