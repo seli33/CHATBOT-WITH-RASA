@@ -32,13 +32,13 @@ entities:
 
 responses:
   utter_greet:
-    - text: "Hello! Welcome to Fusemachines. How can I help you today?"
+    - text: "Hello! Welcome to .... How can I help you today?"
     - text: "Hi there! I'm here to assist you with information about our AI programs. What would you like to know?"
-    - text: "Hello! Thanks for reaching out to Fusemachines. How may I assist you?"
+    - text: "Hello! Thanks for reaching out . How may I assist you?"
 
   utter_goodbye:
     - text: "Goodbye! Feel free to reach out if you have more questions. Best of luck with your AI journey!"
-    - text: "Thank you for contacting Fusemachines. Have a great day!"
+    - text: "Thank you for contacting us. Have a great day!"
     - text: "See you later! Don't hesitate to contact us again if you need anything."
 
   utter_thank:
@@ -60,7 +60,7 @@ responses:
         
         Which program interests you the most?
     - text: |
-        Fusemachines offers multiple learning paths:
+        we offers multiple learning paths:
         
         • AI Fellowship (6 months) - For graduates and final year students
         • Foundation in AI - For those starting their AI journey
@@ -80,7 +80,7 @@ responses:
         4. Final selection and enrollment
         
         **For Foundation/Microdegree courses:**
-        1. Visit fuse.ai and complete the registration form
+        1. Visit  and complete the registration form
         2. Our team will contact you with further details
         3. Complete the payment process (if applicable)
         4. Start your learning journey!
@@ -89,7 +89,7 @@ responses:
     - text: |
         The admission process is simple:
         
-        ✅ Visit our website at fuse.ai
+        ✅ Visit our website 
         ✅ Fill out the application form with your details
         ✅ For AI Fellowship - appear for entrance exam and interview
         ✅ For other courses - our team will guide you through enrollment
@@ -100,9 +100,7 @@ responses:
     - text: |
         For the most accurate and up-to-date batch schedules, I recommend:
         
-        📧 Email: info@fusemachines.com
-        📞 Phone: +977-01-5970165
-        🌐 Website: fuse.ai
+        
         
         Batch schedules are typically announced on our website and social media channels. The AI Fellowship usually opens applications once a year, while Foundation and Microdegree courses have multiple batches throughout the year.
         
@@ -110,13 +108,10 @@ responses:
     - text: |
         Batch schedules vary by program:
         
-        • **AI Fellowship** - Annual cohort (applications usually open in Q1)
-        • **Foundation/Microdegree** - Multiple batches throughout the year
+        
         
         For the latest schedule, please:
-        - Check our website: fuse.ai
-        - Contact us at: info@fusemachines.com
-        - Call: +977-01-5970165
+        
         
         Can I help you with anything else?
 
@@ -174,7 +169,7 @@ responses:
         - Contact for group discounts
         
         For exact pricing, please contact:
-        📧 info@fusemachines.com
+        
         📞 +977-01-5970165
         
         Would you like information about payment options?
@@ -185,9 +180,9 @@ responses:
         📚 **Other Courses** - Paid programs with competitive pricing
         
         For detailed fee structure:
-        - Email: info@fusemachines.com
+        
         - Call: +977-01-5970165
-        - Visit: fuse.ai
+        - Visit: our website
         
         We also offer payment plans for certain programs. Interested in a specific course?
 
@@ -246,17 +241,12 @@ responses:
 
   utter_ask_contact:
     - text: |
-        **Contact Fusemachines Nepal:**
+        **Contact us**
         
-        📧 **Email:** info@fusemachines.com
-        📞 **Phone:** +977-01-5970165
-        🌐 **Website:** fuse.ai
+        
         📍 **Address:** Dillibazar, Kathmandu, Nepal
         
-        **Social Media:**
-        - Facebook: Fusemachines Nepal
-        - LinkedIn: Fusemachines
-        - Instagram: @fusemachines
+        
         
         Our team typically responds within 24-48 hours. Feel free to reach out, and they'll be happy to assist you!
         
@@ -264,9 +254,7 @@ responses:
     - text: |
         I'd be happy to connect you with our team!
         
-        📧 info@fusemachines.com
-        📞 +977-01-5970165
-        🌐 fuse.ai
+        
         
         You can also fill out the contact form on our website, and someone will reach out to you shortly.
         
@@ -277,27 +265,25 @@ responses:
         **For Exam Scheduling:**
         
         📝 After submitting your AI Fellowship application, you'll receive:
-        1. Login credentials for Fuse Classroom
+        1. Login credentials for  Classroom
         2. Instructions to book your exam slot
         3. Available dates and times for the entrance exam
         
         If you haven't received these details:
         - Check your email (including spam folder)
-        - Log in to Fuse Classroom portal
-        - Contact: info@fusemachines.com
+        -
         
         Have you already submitted your application?
     - text: |
         To schedule your entrance exam:
         
-        ✓ Log in to your Fuse Classroom account
+        ✓ Log in to your Classroom account
         ✓ Look for the exam scheduling form/announcement
         ✓ Select your preferred date and time
         ✓ Submit your choice
         
         If you're facing issues, please contact:
-        📧 info@fusemachines.com
-        📞 +977-01-5970165
+       
         
         Need help with anything else?
 
@@ -313,8 +299,7 @@ responses:
         
         **Still having issues?**
         Please contact our technical support team:
-        📧 info@fusemachines.com
-        📞 +977-01-5970165
+        
         
         Provide them with:
         - Your registered email
@@ -332,8 +317,7 @@ responses:
         - Check internet connection
         
         **Contact Tech Support:**
-        📧 info@fusemachines.com
-        📞 +977-01-5970165
+        
         
         Include your email and error details for faster resolution.
 
@@ -342,8 +326,7 @@ responses:
         I understand you need to reschedule your exam.
         
         **Please contact us immediately:**
-        📧 info@fusemachines.com
-        📞 +977-01-5970165
+        
         
         **Include in your message:**
         - Your full name and registered email
@@ -357,9 +340,7 @@ responses:
     - text: |
         For exam rescheduling requests:
         
-        🔄 Contact our team urgently:
-        - Email: info@fusemachines.com
-        - Phone: +977-01-5970165
+        🔄 Contact our team urgently
         
         📝 Provide:
         - Your registration details
@@ -372,7 +353,7 @@ responses:
     - text: |
         To check your application status:
         
-        **Option 1:** Log in to Fuse Classroom
+        **Option 1:** Log in to Classroom
         - Use your registered email
         - Check the dashboard for updates
         
@@ -381,8 +362,7 @@ responses:
         - Check spam/junk folder
         
         **Option 3:** Contact us
-        📧 info@fusemachines.com
-        📞 +977-01-5970165
+        
         Provide your full name and registered email
         
         Usually, confirmation emails are sent within 24-48 hours of submission.
@@ -390,10 +370,9 @@ responses:
         Let's verify your application status!
         
         ✓ Check your email for confirmation (including spam)
-        ✓ Log in to Fuse Classroom portal
+        ✓ Log in to  Classroom portal
         ✓ Contact us with your details:
-          - Email: info@fusemachines.com
-          - Phone: +977-01-5970165
+          
         
         Our team can confirm your application status within a few hours.
 
@@ -410,28 +389,14 @@ responses:
         - Interview format
         - Technical setup
         
-        Please contact:
-        📧 info@fusemachines.com
-        📞 +977-01-5970165
+        
         
         It's better to confirm early to avoid any confusion!
-    - text: |
-        For interview confirmation:
-        
-        📧 Reply to the interview invitation email
-        📞 Call +977-01-5970165
-        💬 Email: info@fusemachines.com
-        
-        Our team will confirm all details and answer any questions you have.
+   
 
   utter_request_score_review:
     - text: |
-        **For Exam Score Review:**
         
-        If you believe there's an error in your exam results:
-        
-        📧 Email: info@fusemachines.com
-        📞 Phone: +977-01-5970165
         
         **Include:**
         - Your full name and registration email
@@ -442,24 +407,11 @@ responses:
         
         The academic team will review your request and respond within 3-5 business days.
         
-        Please note: Score reviews are conducted carefully but adjustments are made only if there's a clear error.
-    - text: |
-        To request a score review:
-        
-        📝 Contact our academic team:
-        - Email: info@fusemachines.com
-        - Phone: +977-01-5970165
-        
-        📎 Provide:
-        - Your exam details
-        - Specific concerns
-        - Supporting evidence
-        
-        Reviews typically take 3-5 business days.
+       
 
   utter_ask_career_guidance:
     - text: |
-        **Career Guidance at Fusemachines:**
+        **Career Guidance :**
         
         We offer guidance to help you choose the right path:
         
@@ -472,36 +424,17 @@ responses:
         - Hands-on projects and mentorship
         
         🎯 **For Professionals:**
-        - AI2Go Workshop (non-technical friendly)
+        -  Workshop (non-technical friendly)
         - Microdegree for specialization
         
-        📞 Schedule a counseling session:
-        - Email: info@fusemachines.com
-        - Phone: +977-01-5970165
         
-        Tell me about your background, and I can suggest the best program for you!
-    - text: |
-        Let's find the right program for you!
         
-        🎓 **Tell me about:**
-        - Your current education/work
-        - Your AI learning goals
-        - Your time commitment
-        
-        Based on this, I can recommend:
-        ✓ Foundation courses (beginners)
-        ✓ AI Fellowship (students/graduates)
-        ✓ Microdegree (intermediate learners)
-        ✓ AI2Go (professionals)
-        
-        Or contact our counseling team:
-        📧 info@fusemachines.com | 📞 +977-01-5970165
 
   utter_request_partnership:
     - text: |
         **Partnership Opportunities:**
         
-        Thank you for your interest in partnering with Fusemachines!
+        Thank you for your interest in partnering !
         
         We collaborate with:
         - Educational institutions
@@ -509,31 +442,8 @@ responses:
         - Technology companies
         - Community organizations
         
-        **To discuss partnership opportunities:**
-        📧 Email: info@fusemachines.com
-        📞 Phone: +977-01-5970165
         
-        Please include:
-        - Your organization details
-        - Type of collaboration you're interested in
-        - Your contact information
         
-        Our business development team will reach out to you!
-    - text: |
-        Great to hear about potential collaboration!
-        
-        🤝 **Partnership Inquiries:**
-        
-        Contact our team at:
-        📧 info@fusemachines.com
-        📞 +977-01-5970165
-        
-        Mention:
-        - Your organization
-        - Collaboration interests
-        - How we can work together
-        
-        Looking forward to potential partnership!
 
   utter_default:
     - text: |
@@ -547,7 +457,7 @@ responses:
         • Technical support
         
         Could you please rephrase your question?
-    - text: "I didn't quite get that. Could you please ask in a different way? I'm here to help with information about Fusemachines programs!"
+    - text: "I didn't quite get that. Could you please ask in a different way? I'm here to help with information about the programs!"
 
   utter_ask_faq:
     - text: |
