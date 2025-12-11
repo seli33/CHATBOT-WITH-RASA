@@ -1,26 +1,128 @@
 version: "3.1"
 
 rules:
+  # Greeting rules
+  - rule: Respond to greeting
+    steps:
+      - intent: greet
+      - action: utter_greet
 
-# Greet
-- rule: Say hello anytime the user greets
-  steps:
-    - intent: greet
-    - action: utter_greet
+  # Goodbye rules
+  - rule: Say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
 
-# Goodbye
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-    - intent: goodbye
-    - action: utter_goodbye
+  # Thank you rules
+  - rule: Respond to thanks
+    steps:
+      - intent: thank
+      - action: utter_thank
 
-# Bot challenge
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-    - intent: bot_challenge
-    - action: utter_iamabot
+  # Course information rules
+  - rule: Provide course information
+    steps:
+      - intent: ask_course_info
+      - action: utter_ask_course_info
 
-- rule: Handle fallback with suggestions
-  steps:
-  - intent: nlu_fallback
-  - action: action_enhanced_fallback
+  # Admission process rules
+  - rule: Explain admission process
+    steps:
+      - intent: ask_admission_process
+      - action: utter_ask_admission_process
+
+  # Batch schedule rules
+  - rule: Provide batch schedule
+    steps:
+      - intent: ask_batch_schedule
+      - action: utter_ask_batch_schedule
+
+  # Eligibility rules
+  - rule: Explain eligibility criteria
+    steps:
+      - intent: ask_eligibility
+      - action: utter_ask_eligibility
+
+  # Fees rules
+  - rule: Provide fee information
+    steps:
+      - intent: ask_fees
+      - action: utter_ask_fees
+
+  # Duration rules
+  - rule: Provide duration information
+    steps:
+      - intent: ask_duration
+      - action: utter_ask_duration
+
+   # Location mode rules
+  - rule: Explain course delivery mode
+    steps:
+      - intent: ask_location_mode
+      - action: utter_ask_location_mode
+
+  # Contact rules
+  - rule: Provide contact information
+    steps:
+      - intent: ask_contact
+      - action: utter_ask_contact
+
+  # Exam scheduling rules
+  - rule: Help with exam scheduling
+    steps:
+      - intent: ask_exam_scheduling
+      - action: utter_ask_exam_scheduling
+
+  # Technical support rules
+  - rule: Provide technical support
+    steps:
+      - intent: request_technical_support
+      - action: utter_request_technical_support
+
+  # Exam reschedule rules
+  - rule: Handle exam reschedule request
+    steps:
+      - intent: request_exam_reschedule
+      - action: utter_request_exam_reschedule
+
+  # Application status rules
+  - rule: Check application status
+    steps:
+      - intent: confirm_application_status
+      - action: utter_confirm_application_status
+
+  # Interview confirmation rules
+  - rule: Confirm interview details
+    steps:
+      - intent: confirm_interview_details
+      - action: utter_confirm_interview_details
+
+  # Score review rules
+  - rule: Handle score review request
+    steps:
+      - intent: request_score_review
+      - action: utter_request_score_review
+
+  # Career guidance rules
+  - rule: Provide career guidance
+    steps:
+      - intent: ask_career_guidance
+      - action: utter_ask_career_guidance
+
+  # Partnership rules
+  - rule: Handle partnership inquiries
+    steps:
+      - intent: request_partnership
+      - action: utter_request_partnership
+
+  # Fallback rule
+  - rule: Handle unclear messages
+    steps:
+      - intent: nlu_fallback
+      - action: utter_default
+
+  # Say goodbye after providing information
+  - rule: Say goodbye when user says goodbye after any response
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye

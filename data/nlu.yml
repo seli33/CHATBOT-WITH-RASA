@@ -1,280 +1,268 @@
 version: "3.1"
 
 nlu:
+- intent: ask_course_info
+  examples: |
+    - I want to know about the [AI](topic) course
+    - Tell me about your [programs](program_type)
+    - What courses do you offer?
+    - Can you tell me about [beginner](course_level) courses?
+    - I want to know more about this [program](program_type)
+    - What is this [fellowship](program_type)?
+    - What programs do you have for [AI](topic)?
+    - I want to know about the [Fuse AI](organization_name)
+    - What courses do you provide for [AI](topic)?
+    - Tell me details about the [course](program_type)
+    - What is the [Microdegree](course_name) in AI?
+    - Information about [Foundation](course_level) in AI
+    - What programs are available?
+    - Tell me about your [AI](topic) courses
+    - [Course](program_type) information please
+    - What can I learn here?
+    - Looking for [AI](topic) courses
+    - Need [course](program_type) details
+    - What [training](program_type) do you offer?
+    
+- intent: ask_admission_process
+  examples: |
+    - How can I [enroll](action_type)?
+    - I want to join this [course](program_type)
+    - How do I [apply](action_type)?
+    - What is the [enrollment](action_type) process?
+    - I would like to enroll in the [AI](topic) course
+    - How can I [register](action_type)?
+    - I want to be part of this [program](program_type)
+    - Tell me the admission procedure
+    - How to join the [fellowship](program_type)?
+    - I want to apply for [AI Fellowship](course_name)
+    - What is the [application](action_type) process?
+    - How do I get admitted?
+    - I want to join the [AI2Go Workshop](course_name)
+    - Can I enroll [now](time_reference)?
+    - I'm interested in joining
+    - How to become part of [Fuse Machines](organization_name)?
+    - [Registration](action_type) process please
+    - I want to start learning [AI](topic)
+    - How do I [sign up](action_type)?
+    - [Application](action_type) procedure please
 
-# General intents
+
+- intent: ask_batch_schedule
+  examples: |
+    - When will the next batch start?
+    - What is the course start date?
+    - When does the program begin?
+    - Next batch timing?
+    - When can I start?
+    - What are the class timings?
+    - When will classes commence?
+    - Course starting date?
+    - When does the AI Fellowship start?
+    - Next cohort start date?
+    - When will new sessions start?
+    - What is the program schedule?
+    - Class start date please
+    - When is the next intake?
+    - Batch timing information
+    - When can I join?
+    - Course commencement date?
+    - When does training begin?
+    - Next session start date?
+    - When will the 2026 cohort start?
+
+- intent: ask_eligibility
+  examples: |
+    - What are the requirements?
+    - Am I eligible for this course?
+    - What are the basic requirements?
+    - Eligibility criteria please
+    - What qualifications do I need?
+    - Can I apply with 12th grade?
+    - Do I need a bachelor's degree?
+    - What are the prerequisites?
+    - Am I qualified to join?
+    - What criteria do I need to meet?
+    - Can beginners apply?
+    - Is this for IT professionals only?
+    - Can I join without a degree?
+    - What preparation do I need?
+    - Admission criteria please
+    - Who can apply?
+    - What background is required?
+    - Can non-technical people join?
+    - Do I qualify for this?
+    - What skills are needed?
+
+- intent: ask_fees
+  examples: |
+    - What is the course fee?
+    - How much does it cost?
+    - What are the charges?
+    - Is it free?
+    - Course pricing please
+    - What is the fee structure?
+    - How much do I need to pay?
+    - Is there any cost?
+    - What's the price?
+    - Fee details please
+    - Do I have to pay?
+    - Cost of the program?
+    - Is this course paid?
+    - What are the fees?
+    - Price information please
+    - How expensive is it?
+    - What's the total cost?
+    - Is there any charge?
+    - Free or paid?
+    - Course fees?
+
+- intent: ask_duration
+  examples: |
+    - How long is the course?
+    - What is the program duration?
+    - Course length?
+    - How many weeks?
+    - How many months is it?
+    - What is the time period?
+    - Duration of the program?
+    - How long does it take?
+    - Course timeline?
+    - Total duration please
+    - How many hours?
+    - Length of the course?
+    - Time commitment required?
+    - How long to complete?
+    - Program length?
+
+
+- intent: ask_location_mode
+  examples: |
+    - Is it online or offline?
+    - Can I take classes remotely?
+    - Is this course online?
+    - Do you have physical classes?
+    - Where are the classes held?
+    - Online or in-person?
+    - Can I attend from home?
+    - Is remote learning available?
+    - What is the delivery method?
+    - Virtual or physical classes?
+
+- intent: ask_contact
+  examples: |
+    - Can you contact me?
+    - Please call me
+    - I need to talk to someone
+    - Can I get a call?
+    - Contact me regarding this
+    - I want to speak with someone
+    - Please reach out to me
+    - Can someone call me?
+    - I need assistance over phone
+    - Get in touch with me please
+
+- intent: ask_exam_scheduling
+  examples: |
+    - How can I book exam date?
+    - When is my exam?
+    - How to schedule the test?
+    - Exam date booking
+    - When can I take the exam?
+    - How to book exam slot?
+    - Test scheduling please
+    - When is the entrance exam?
+
+- intent: request_technical_support
+  examples: |
+    - I'm having technical issues
+    - The camera is not working
+    - I can't submit my exam
+    - Login problem
+    - Website error
+    - I didn't receive login credentials
+    - Portal not showing anything
+    - Technical issue with platform
+    - Can't access the classroom
+    - 403 error problem
+    - Password not working
+    - Not getting confirmation email
+
+- intent: request_exam_reschedule
+  examples: |
+    - I missed my entrance exam
+    - Can I reschedule my exam?
+    - Need another exam slot
+    - Missed the test due to health issue
+    - Can I take exam again?
+    - Reschedule my entrance exam
+    - Give me another shift please
+    - I couldn't attend the exam
+
+- intent: confirm_application_status
+  examples: |
+    - Is my application submitted?
+    - Did I apply successfully?
+    - Application status check
+    - Was my form received?
+    - Did you get my application?
+    - Confirmation of submission
+    - Is my registration complete?
+
+- intent: confirm_interview_details
+  examples: |
+    - Is my interview time correct?
+    - Confirm interview schedule
+    - Verify interview timing
+    - Is this the right time?
+    - Interview confirmation needed
+
+- intent: request_score_review
+  examples: |
+    - Check my exam score
+    - I think there's an error in marking
+    - Review my results please
+    - Score reconsideration request
+    - My marks seem wrong
+
+- intent: ask_career_guidance
+  examples: |
+    - I need career counseling
+    - Which course suits my background?
+    - Career guidance please
+    - Help me choose a program
+    - What should I learn?
+    - Career path advice needed
+
+- intent: request_partnership
+  examples: |
+    - I want to collaborate
+    - Partnership opportunity
+    - Can we work together?
+    - Collaboration inquiry
+    - We want to partner with you
 
 - intent: greet
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - hey there
-    - hi there
-    - greetings
-    - howdy
-    - what's up
+    - Hello
+    - Hi
+    - Hey
+    - Good morning
+    - Good afternoon
+    - Hi there
+    - Greetings
+
+- intent: thank
+  examples: |
+    - Thanks
+    - Thank you
+    - Thanks a lot
+    - Much appreciated
+    - Thank you so much
 
 - intent: goodbye
   examples: |
-    - bye
-    - goodbye
-    - see you later
-    - see you
-    - talk to you later
-    - got to go
-    - bye bye
-    - catch you later
-    - take care
-    - until next time
-
-- intent: affirm
-  examples: |
-    - yes
-    - yeah
-    - yep
-    - sure
-    - of course
-    - that sounds good
-    - correct
-    - yes please
-    - absolutely
-    - right
-    - indeed
-    - definitely
-
-- intent: deny
-  examples: |
-    - no
-    - nope
-    - not really
-    - no thanks
-    - I don't think so
-    - not at all
-    - never
-    - no way
-    - nah
-    - negative
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I'm good
-    - excellent
-    - fantastic
-    - superb
-    - feeling awesome
-    - couldn't be better
-
-- intent: mood_unhappy
-  examples: |
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - terrible
-    - very terrible
-    - bad
-    - awful
-    - not great
-    - feeling down
-    - depressed
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-    - are you real?
-    - is this a bot?
-    - are you automated?
-    - are you a real person?
-
-# FAQ intents - each topic gets its own intent
-
-- intent: ask_application_process
-  examples: |
-    - How do I apply?
-    - What is the application process?
-    - How can I apply for the program?
-    - Tell me about the application
-    - I want to apply
-    - Application process
-    - How to enroll?
-    - What are the steps to apply?
-    - How do I sign up?
-    - Where can I apply?
-    - Can you help me apply?
-    - I'd like to enroll
-
-- intent: ask_application_deadline
-  examples: |
-    - What is the deadline?
-    - When is the application deadline?
-    - When should I apply by?
-    - Application deadline
-    - Last date to apply
-    - When does the application close?
-    - Until when can I apply?
-    - What's the last date?
-    - When do applications close?
-    - Is there a deadline?
-
-- intent: ask_career_in_ai
-  examples: |
-    - What does a career in AI look like?
-    - How does an AI career look?
-    - What kind of career can I expect in AI?
-    - Tell me about AI careers
-    - What jobs are available in AI?
-    - Career prospects in AI
-    - AI career opportunities
-    - What can I do with AI?
-    - AI job options
-    - Career paths in artificial intelligence
-
-- intent: ask_placement_opportunities
-  examples: |
-    - Can candidates apply for placement positions at Fusemachines or other companies?
-    - Do you offer placement opportunities?
-    - Is there job placement after the program?
-    - Will you help me get a job?
-    - Placement assistance
-    - Job placement support
-    - Do you help with job placement?
-    - Will I get a job after this?
-    - What about placements?
-    - Job opportunities after completion
-
-- intent: ask_long_term_career
-  examples: |
-    - What can I expect in terms of long-term career and employment opportunities?
-    - What are the long-term job prospects?
-    - Will this program help me in my long-term career?
-    - Career opportunities after the program
-    - Long term career growth
-    - Future career prospects
-    - How will this help my career long term?
-    - Long-term employment opportunities
-    - Career growth potential
-
-- intent: ask_program_duration
-  examples: |
-    - What is the duration of the program?
-    - How long is the program?
-    - How many months does the program run?
-    - Program length
-    - How long does it take?
-    - Course duration
-    - Time required for completion
-    - How much time does the program take?
-    - Duration of the course
-    - Length of training
-
-- intent: ask_preparation_courses
-  examples: |
-    - Are there any courses I can take in preparation for the program?
-    - How can I prepare before joining the program?
-    - What should I study before enrolling?
-    - How to prepare?
-    - Preparation required
-    - Prerequisites
-    - What do I need to know beforehand?
-    - How should I prepare?
-    - What can I study to get ready?
-    - Preparatory courses
-
-- intent: ask_ai_jobs_nepal
-  examples: |
-    - What is the supply and demand of AI jobs in Nepal and beyond?
-    - Are AI jobs available in Nepal?
-    - What is the job market like for AI in Nepal?
-    - AI jobs in Nepal
-    - Job market in Nepal
-    - AI opportunities in Nepal
-    - Are there AI positions in Nepal?
-    - Nepal AI job market
-    - AI demand in Nepal
-
-- intent: ask_education_requirement
-  examples: |
-    - What educational or professional background is required for enrollment?
-    - What background do I need to join the program?
-    - What are the prerequisites for the program?
-    - Education requirements
-    - What qualifications do I need?
-    - Entry requirements
-    - Academic background needed
-    - Do I need a degree?
-    - What education is required?
-    - Eligibility criteria
-
-- intent: ask_project_types
-  examples: |
-    - What kinds of projects will I be working on?
-    - What type of projects are included?
-    - Describe the projects in the program
-    - What projects will I do?
-    - Tell me about the projects
-    - Project work details
-    - What kind of project work?
-    - Types of projects
-    - Project examples
-
-- intent: ask_accreditation
-  examples: |
-    - Are the courses accredited?
-    - Is the program recognized?
-    - Are these certifications accredited?
-    - Is it certified?
-    - Official certification
-    - Recognition of certificate
-    - Is this an accredited program?
-    - Will I get a recognized certificate?
-    - Is the certification valid?
-
-- intent: ask_class_recording
-  examples: |
-    - Are classes recorded if I cannot join?
-    - Can I attend classes remotely?
-    - What if I miss a class?
-    - Recording availability
-    - Can I watch later?
-    - Are sessions recorded?
-    - Will classes be recorded?
-    - Can I access recordings?
-    - What if I can't attend live?
-
-- intent: ask_project_work_requirement
-  examples: |
-    - Do we have to do any project work?
-    - Is project work mandatory?
-    - Will there be hands-on projects?
-    - Are projects required?
-    - Do I need to complete projects?
-    - Project requirements
-    - Is project work compulsory?
-    - Must I do projects?
-    - Are projects part of the program?
-
-- intent: ask_session_time
-  examples: |
-    - At what time will the sessions be held?
-    - When are the classes scheduled?
-    - What are the class timings?
-    - Class schedule
-    - Session timings
-    - What time are classes?
-    - When do classes happen?
-    - Schedule of sessions
-    - Class time slots
+    - Bye
+    - Goodbye
+    - See you later
+    - Talk to you later
+    - Have a good day
