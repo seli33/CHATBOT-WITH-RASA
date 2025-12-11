@@ -3,49 +3,49 @@ version: "3.1"
 nlu:
 - intent: ask_course_info
   examples: |
-    - I want to know about the AI course
-    - Tell me about your programs
+    - I want to know about the [AI](topic) course
+    - Tell me about your [programs](program_type)
     - What courses do you offer?
-    - Can you tell me about beginner courses?
-    - I want to know more about this program
-    - What is this fellowship?
-    - Tell me about the AI2Go Workshop
-    - What programs do you have for AI?
-    - I want to know about the fuse ai
-    - What courses do you provide for AI?
-    - Tell me details about the course
-    - What is the Microdegree in AI?
-    - Information about Foundation in AI
+    - Can you tell me about [beginner](course_level) courses?
+    - I want to know more about this [program](program_type)
+    - What is this [fellowship](program_type)?
+    - What programs do you have for [AI](topic)?
+    - I want to know about the [Fuse AI](organization_name)
+    - What courses do you provide for [AI](topic)?
+    - Tell me details about the [course](program_type)
+    - What is the [Microdegree](course_name) in AI?
+    - Information about [Foundation](course_level) in AI
     - What programs are available?
-    - Tell me about your AI courses
-    - Course information please
+    - Tell me about your [AI](topic) courses
+    - [Course](program_type) information please
     - What can I learn here?
-    - Looking for AI courses
-    - Need course details
-    - What training do you offer?
-
+    - Looking for [AI](topic) courses
+    - Need [course](program_type) details
+    - What [training](program_type) do you offer?
+    
 - intent: ask_admission_process
   examples: |
-    - How can I enroll?
-    - I want to join this course
-    - How do I apply?
-    - What is the enrollment process?
-    - I would like to enroll in the AI course
-    - How can I register?
-    - I want to be part of this program
+    - How can I [enroll](action_type)?
+    - I want to join this [course](program_type)
+    - How do I [apply](action_type)?
+    - What is the [enrollment](action_type) process?
+    - I would like to enroll in the [AI](topic) course
+    - How can I [register](action_type)?
+    - I want to be part of this [program](program_type)
     - Tell me the admission procedure
-    - How to join the fellowship?
-    - I want to apply for AI Fellowship
-    - What is the application process?
+    - How to join the [fellowship](program_type)?
+    - I want to apply for [AI Fellowship](course_name)
+    - What is the [application](action_type) process?
     - How do I get admitted?
-    - I want to join the AI2Go Workshop
-    - Can I enroll now?
+    - I want to join the [AI2Go Workshop](course_name)
+    - Can I enroll [now](time_reference)?
     - I'm interested in joining
-    - How to become part of fuse machine?
-    - Registration process please
-    - I want to start learning AI
-    - How do I sign up?
-    - Application procedure please
+    - How to become part of [Fuse Machines](organization_name)?
+    - [Registration](action_type) process please
+    - I want to start learning [AI](topic)
+    - How do I [sign up](action_type)?
+    - [Application](action_type) procedure please
+
 
 - intent: ask_batch_schedule
   examples: |

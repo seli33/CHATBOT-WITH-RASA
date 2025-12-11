@@ -55,13 +55,7 @@ rules:
       - intent: ask_duration
       - action: utter_ask_duration
 
-  # Payment options rules
-  - rule: Explain payment options
-    steps:
-      - intent: ask_payment_options
-      - action: utter_ask_payment_options
-
-  # Location mode rules
+   # Location mode rules
   - rule: Explain course delivery mode
     steps:
       - intent: ask_location_mode

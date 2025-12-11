@@ -21,6 +21,15 @@ intents:
   - ask_career_guidance
   - request_partnership
 
+entities:
+  - course_name
+  - program_type
+  - course_level
+  - action_type
+  - topic
+  - time_reference
+  - organization_name
+
 responses:
   utter_greet:
     - text: "Hello! Welcome to Fusemachines. How can I help you today?"
@@ -55,7 +64,7 @@ responses:
         
         • AI Fellowship (6 months) - For graduates and final year students
         • Foundation in AI - For those starting their AI journey
-        • Microdegree in AI - Advanced AI specialization
+        • Microdegree in AI - Advanced AI speciali/zation
         • AI2Go Workshop - For working professionals
         
         Would you like detailed information about any specific program?
