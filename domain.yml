@@ -1,157 +1,554 @@
 version: "3.1"
 
 intents:
-  # General intents
   - greet
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  # FAQ intents - each as separate intent
-  - ask_application_process
-  - ask_application_deadline
-  - ask_career_in_ai
-  - ask_placement_opportunities
-  - ask_long_term_career
-  - ask_program_duration
-  - ask_preparation_courses
-  - ask_ai_jobs_nepal
-  - ask_education_requirement
-  - ask_project_types
-  - ask_accreditation
-  - ask_class_recording
-  - ask_project_work_requirement
-  - ask_session_time
-  - nlu_fallback
-
-entities: []
-
-slots: {}
+  - thank
+  - ask_course_info
+  - ask_admission_process
+  - ask_batch_schedule
+  - ask_eligibility
+  - ask_fees
+  - ask_duration
+  - ask_location_mode
+  - ask_contact
+  - ask_exam_scheduling
+  - request_technical_support
+  - request_exam_reschedule
+  - confirm_application_status
+  - confirm_interview_details
+  - request_score_review
+  - ask_career_guidance
+  - request_partnership
 
 responses:
-  # General responses
   utter_greet:
-    - text: "Hi there! Welcome to our AI Program chatbot. How can I help you today?"
-    - text: "Hello! I'm here to answer your questions about our AI program. What would you like to know?"
-    - text: "Hey! Great to see you here. Feel free to ask me anything about the program!"
+    - text: "Hello! Welcome to Fusemachines. How can I help you today?"
+    - text: "Hi there! I'm here to assist you with information about our AI programs. What would you like to know?"
+    - text: "Hello! Thanks for reaching out to Fusemachines. How may I assist you?"
 
   utter_goodbye:
-    - text: "Thanks for chatting! If you have more questions later, I'm always here to help. Good luck! "
-    - text: "See you later! Feel free to come back anytime you need more information. Take care!"
-    - text: "Goodbye! Don't hesitate to reach out if you think of more questions. Best wishes on your journey!"
+    - text: "Goodbye! Feel free to reach out if you have more questions. Best of luck with your AI journey!"
+    - text: "Thank you for contacting Fusemachines. Have a great day!"
+    - text: "See you later! Don't hesitate to contact us again if you need anything."
 
-  utter_iamabot:
-    - text: "I'm an AI chatbot designed to help students like you learn about our AI program. I'm here 24/7 to answer your questions!"
-    - text: "Yes, I'm a bot! But don't worry—I'm trained to give you accurate information about our program and help with your queries."
+  utter_thank:
+    - text: "You're welcome! Is there anything else I can help you with?"
+    - text: "Happy to help! Let me know if you have any other questions."
+    - text: "My pleasure! Feel free to ask if you need more information."
 
-  utter_mood_great:
-    - text: "That's wonderful to hear!  Now, how can I help you with the AI program?"
-    - text: "Amazing! I'm glad you're doing great. What would you like to know about our program?"
-    - text: "That's fantastic! Let me know if you have any questions about joining us!"
+  utter_ask_course_info:
+    - text: |
+        We offer several AI programs:
+        
+        🎓 **AI Fellowship** - A comprehensive 6-month program covering ML, DL, and Generative AI with real-world projects
+        
+        📚 **Foundation in AI** - Perfect for beginners to build strong fundamentals in AI and Mathematics
+        
+        🎯 **Microdegree in AI** - In-depth specialization program with advanced AI concepts
+        
+        💼 **AI2Go Workshop** - Designed for professionals from non-technical backgrounds
+        
+        Which program interests you the most?
+    - text: |
+        Fusemachines offers multiple learning paths:
+        
+        • AI Fellowship (6 months) - For graduates and final year students
+        • Foundation in AI - For those starting their AI journey
+        • Microdegree in AI - Advanced AI specialization
+        • AI2Go Workshop - For working professionals
+        
+        Would you like detailed information about any specific program?
 
-  utter_mood_unhappy:
-    - text: "I'm sorry to hear that.Is there anything about our program I can help clarify or any concerns I can address?"
-    - text: "I understand. Sometimes choosing the right program can feel overwhelming. How can I help make things clearer for you?"
+  utter_ask_admission_process:
+    - text: |
+        Here's how to apply to our programs:
+        
+        **For AI Fellowship:**
+        1. Fill out the application form on our website
+        2. Take the entrance examination
+        3. Selected candidates will be called for an interview
+        4. Final selection and enrollment
+        
+        **For Foundation/Microdegree courses:**
+        1. Visit fuse.ai and complete the registration form
+        2. Our team will contact you with further details
+        3. Complete the payment process (if applicable)
+        4. Start your learning journey!
+        
+        Would you like me to share the application link?
+    - text: |
+        The admission process is simple:
+        
+        ✅ Visit our website at fuse.ai
+        ✅ Fill out the application form with your details
+        ✅ For AI Fellowship - appear for entrance exam and interview
+        ✅ For other courses - our team will guide you through enrollment
+        
+        Which program are you interested in applying for?
 
-  # FAQ responses - student-friendly and encouraging
-  utter_ask_application_process:
-    - text: "Great question! Applying is super easy—just head to our website and fill out the online application form. It's straightforward and should only take a few minutes. If you need any help along the way, just let me know!"
-    - text: "The application process is fully online and quite simple! Visit our website, complete the application form, and you're all set. We've made it user-friendly so you can focus on getting started!"
-    - text: "Ready to apply? Awesome! Just go to our website and submit the online application form. It's quick, easy, and we'll guide you through each step."
+  utter_ask_batch_schedule:
+    - text: |
+        For the most accurate and up-to-date batch schedules, I recommend:
+        
+        📧 Email: info@fusemachines.com
+        📞 Phone: +977-01-5970165
+        🌐 Website: fuse.ai
+        
+        Batch schedules are typically announced on our website and social media channels. The AI Fellowship usually opens applications once a year, while Foundation and Microdegree courses have multiple batches throughout the year.
+        
+        Would you like to know about any specific program?
+    - text: |
+        Batch schedules vary by program:
+        
+        • **AI Fellowship** - Annual cohort (applications usually open in Q1)
+        • **Foundation/Microdegree** - Multiple batches throughout the year
+        
+        For the latest schedule, please:
+        - Check our website: fuse.ai
+        - Contact us at: info@fusemachines.com
+        - Call: +977-01-5970165
+        
+        Can I help you with anything else?
 
-  utter_ask_application_deadline:
-    - text: "The application deadline is December 31, 2025. I'd recommend applying sooner rather than later to secure your spot—spaces fill up quickly!"
-    - text: "You have until December 31, 2025 to apply. Pro tip: Don't wait until the last minute! Submit your application early to avoid any last-minute stress."
-    - text: "Mark your calendar! Applications close on December 31, 2025. The earlier you apply, the better—it gives you peace of mind and more time to prepare."
+  utter_ask_eligibility:
+    - text: |
+        **Eligibility Criteria:**
+        
+        📌 **AI Fellowship:**
+        - Final year bachelor's students OR
+        - Graduates OR
+        - Working professionals
+        - Basic knowledge of programming is beneficial
+        
+        📌 **Foundation in AI:**
+        - Anyone interested in learning AI (no prerequisites)
+        - High school graduates and above
+        
+        📌 **Microdegree in AI:**
+        - Completed Foundation course OR
+        - Basic AI/ML knowledge
+        
+        📌 **AI2Go Workshop:**
+        - Working professionals from any background
+        - No technical prerequisites required
+        
+        Which program are you considering?
+    - text: |
+        Here are the basic requirements:
+        
+        ✓ **AI Fellowship** - Bachelor's final year or graduate, passionate about AI
+        ✓ **Foundation Courses** - Open to all, no prior experience needed
+        ✓ **Microdegree** - Foundation in AI completed or equivalent knowledge
+        ✓ **AI2Go Workshop** - Anyone wanting to learn AI applications
+        
+        Most programs are designed to accommodate learners from diverse backgrounds. Do you meet these criteria?
 
-  utter_ask_career_in_ai:
-    - text: "AI is one of the most exciting fields right now! You could work in machine learning, natural language processing, data science, computer vision, and so much more. The opportunities are growing rapidly both in Nepal and globally—it's a great time to get into AI! "
-    - text: "A career in AI opens up incredible possibilities! From developing smart applications to analyzing data and building AI models, there's a whole world of opportunities. The demand for AI professionals is booming worldwide, including right here in Nepal."
-    - text: "Think of AI as your gateway to the future! Career paths include ML engineer, data scientist, AI researcher, NLP specialist, and more. It's one of the fastest-growing industries with amazing job prospects both locally and internationally."
+  utter_ask_fees:
+    - text: |
+        **Fee Information:**
+        
+        💰 **AI Fellowship:**
+        - Full scholarship available for selected candidates
+        - Scholarships cover tuition fees completely
+        
+        💰 **Foundation in AI:**
+        - Please contact us for current pricing
+        - Early bird discounts may be available
+        
+        💰 **Microdegree in AI:**
+        - Variable pricing based on specialization
+        - Payment plans available
+        
+        💰 **AI2Go Workshop:**
+        - Corporate rates available
+        - Contact for group discounts
+        
+        For exact pricing, please contact:
+        📧 info@fusemachines.com
+        📞 +977-01-5970165
+        
+        Would you like information about payment options?
+    - text: |
+        Fees vary by program:
+        
+        🎓 **AI Fellowship** - FREE with full scholarship for selected candidates
+        📚 **Other Courses** - Paid programs with competitive pricing
+        
+        For detailed fee structure:
+        - Email: info@fusemachines.com
+        - Call: +977-01-5970165
+        - Visit: fuse.ai
+        
+        We also offer payment plans for certain programs. Interested in a specific course?
 
-  utter_ask_placement_opportunities:
-    - text: "Yes, we've got your back! After completing the program, you'll receive placement support and guidance. We work closely with Fusemachines and several partner companies to help connect our graduates with job opportunities. Your success is our priority! "
-    - text: "Absolutely! We provide placement assistance to help you launch your career. You'll get access to opportunities with Fusemachines and our network of partner organizations. We're invested in seeing you succeed professionally."
-    - text: "Great news—placement support is part of the package! Once you graduate, our team will help you with job placements through Fusemachines and affiliated companies. We want to see you thrive in your AI career!"
-
-  utter_ask_long_term_career:
-    - text: "This program is designed to set you up for long-term success! You'll build a strong foundation in AI that can grow with you throughout your career. Whether you want to specialize further or move into leadership roles, the skills you learn here will serve you for years to come. "
-    - text: "Think of this program as an investment in your future! The foundational skills you'll gain are built to last—they'll support your growth in AI and tech for the long haul. You'll be well-prepared for a sustainable and rewarding career."
-    - text: "Long-term, you can expect solid career growth! Our program equips you with skills that remain relevant as the AI field evolves. Whether you pursue advanced roles, research, or entrepreneurship, you'll have the foundation to succeed."
-
-  utter_ask_program_duration:
-    - text: "The program runs for 6 months. You'll have hands-on projects, live interactive sessions, and plenty of opportunities to build real-world skills. It's intensive but totally worth it! "
-    - text: "It's a 6-month journey packed with learning! Expect interactive sessions, practical projects, and milestone achievements throughout. The time flies when you're building cool AI stuff!"
-    - text: "Plan for 6 months of immersive learning. The program includes live classes, project work, and hands-on experience—everything you need to get job-ready in AI."
-
-  utter_ask_preparation_courses:
-    - text: "Good thinking! Having basic programming skills (like Python) and some math knowledge (especially linear algebra and statistics) will definitely help. But don't stress—we provide prep resources before the program starts to get everyone on the same page. "
-    - text: "It's great that you're planning ahead! Some familiarity with programming and math concepts is recommended, but we've got you covered with preparatory materials. You'll receive everything you need to feel confident before day one."
-    - text: "To hit the ground running, basic programming and math knowledge is helpful. The good news? We provide prep content beforehand so you can brush up on anything you need. Everyone starts the program feeling prepared!"
-
-  utter_ask_ai_jobs_nepal:
-    - text: "AI jobs in Nepal are definitely on the rise! Companies are increasingly looking for talent in ML, data analytics, automation, and AI development. Plus, your skills will be valuable globally too—remote opportunities are abundant in this field!"
-    - text: "The AI job market in Nepal is growing fast! There's high demand for skilled professionals, especially in machine learning and data science. And the best part? Your skills open doors both locally and internationally."
-    - text: "Nepal's tech scene is booming, and AI is at the forefront! Job opportunities are expanding in areas like ML, data analytics, and AI development. And with AI being a global field, you'll have options beyond Nepal too."
-
-  utter_ask_education_requirement:
-    - text: "We welcome students with relevant academic backgrounds or professional experience. Basic programming knowledge is preferred, but you don't need to be an expert! If you're motivated to learn and have some foundation in tech or related fields, you're likely a good fit. "
-    - text: "You're eligible if you have a relevant educational background or work experience in tech or related fields. Some programming basics are helpful, but it doesn't need to be advanced. We're looking for passionate learners!"
-    - text: "The requirements are pretty flexible! If you have academic or professional experience in a related area and know some basic programming, you should be good to go. We value curiosity and commitment just as much as credentials."
-
-  utter_ask_project_types:
-    - text: "You'll work on real, hands-on AI projects throughout the program! These aren't just theoretical exercises—you'll be applying what you learn to build actual AI solutions. It's a fantastic way to build your portfolio and gain practical experience. "
-    - text: "The projects are where the magic happens! You'll tackle practical AI challenges that mirror real-world problems. Think of it as learning by doing—you'll apply concepts, build models, and create solutions you can actually showcase to employers."
-    - text: "Get ready for some exciting project work! You'll complete hands-on AI projects that help you master the material and build real skills. These projects become part of your portfolio and show potential employers what you can do."
-
-  utter_ask_accreditation:
-    - text: "Yes, absolutely! The program is officially accredited, and the certificate you earn is recognized. It's a credential you can proudly add to your resume and LinkedIn profile! "
-    - text: "Great question! Yes, the program is accredited, which means your certificate carries weight. It's formally recognized and valued by employers in the industry."
-    - text: "You bet! The program is accredited, so your certification is officially recognized. It's a legitimate credential that validates your AI skills and knowledge."
-
-  utter_ask_class_recording:
-    - text: "Don't worry if you miss a class or want to review something! All sessions are recorded and available for you to watch anytime. You can catch up at your own pace or revisit topics whenever you need. "
-    - text: "Yes, every session is recorded! Life happens, and we get that. You'll have access to all class recordings so you can watch them later or review material as many times as you need."
-    - text: "All classes are recorded for your convenience! Whether you miss a session or just want to go over something again, the recordings are there for you. Learn at your own pace!"
-
-  utter_ask_project_work_requirement:
-    - text: "Yes, project work is mandatory—but in a good way! The projects are where you really learn and grow. They help you apply concepts hands-on and build practical skills that employers look for. Plus, they're a great addition to your portfolio! "
-    - text: "Projects are a required part of the program, and honestly, they're one of the best parts! You'll get to apply what you're learning in practical ways, which really helps everything click. It's how you build real-world experience."
-    - text: "Yep, you'll need to complete projects as part of the program. But here's the thing—these projects are designed to be valuable learning experiences. They strengthen your understanding and give you tangible work to show future employers."
-
-  utter_ask_session_time:
-    - text: "Class timings will be shared with you once you're enrolled. We try to keep a consistent schedule so you can plan your time. And remember, all sessions are recorded, so you have flexibility if something comes up! "
-    - text: "You'll get the full schedule after enrollment. Classes happen on a regular schedule, and since everything's recorded, you won't miss out even if you can't attend live sometimes."
-    - text: "The exact session times will be provided after you enroll. We maintain a consistent class schedule, and recordings are always available for added flexibility. You'll be able to balance your time effectively!"
+  utter_ask_duration:
+    - text: |
+        **Program Durations:**
+        
+        ⏱️ **AI Fellowship:** 6 months (intensive program)
+        ⏱️ **Foundation in AI:** 8-12 weeks
+        ⏱️ **Microdegree in AI:** 3-6 months (depending on specialization)
+        ⏱️ **AI2Go Workshop:** 2-4 weeks
+        
+        Most programs are designed to be flexible for working professionals and students.
+        
+        Which program's schedule would you like to know more about?
+    - text: |
+        Here's how long each program takes:
+        
+        • AI Fellowship - 6 months full program
+        • Foundation courses - 8-12 weeks
+        • Microdegree - 3-6 months
+        • Workshops - 2-4 weeks
+        
+        Need more details about any specific program?
 
   
+  utter_ask_location_mode:
+    - text: |
+        **Course Delivery Modes:**
+        
+        🌐 **Online:**
+        - Most programs offer online learning options
+        - Live interactive sessions
+        - Access from anywhere
+        
+        🏢 **Hybrid:**
+        - Some programs combine online and in-person sessions
+        - Location: Kathmandu, Nepal (when applicable)
+        
+        🖥️ **Self-paced components:**
+        - Video lectures and assignments
+        - Flexible learning schedule
+        
+        The AI Fellowship and most courses are primarily online, making them accessible to learners across Nepal and globally.
+        
+        Which program are you interested in?
+    - text: |
+        Our programs are designed for flexibility:
+        
+        ✓ **Primarily Online** - Learn from anywhere
+        ✓ **Live Sessions** - Interactive virtual classes
+        ✓ **Recorded Content** - Access anytime
+        ✓ **Some In-Person Events** - Workshops, networking (optional)
+        
+        This makes our programs accessible whether you're in Kathmandu or elsewhere!
 
+  utter_ask_contact:
+    - text: |
+        **Contact Fusemachines Nepal:**
+        
+        📧 **Email:** info@fusemachines.com
+        📞 **Phone:** +977-01-5970165
+        🌐 **Website:** fuse.ai
+        📍 **Address:** Dillibazar, Kathmandu, Nepal
+        
+        **Social Media:**
+        - Facebook: Fusemachines Nepal
+        - LinkedIn: Fusemachines
+        - Instagram: @fusemachines
+        
+        Our team typically responds within 24-48 hours. Feel free to reach out, and they'll be happy to assist you!
+        
+        Is there anything specific you'd like me to help you with right now?
+    - text: |
+        I'd be happy to connect you with our team!
+        
+        📧 info@fusemachines.com
+        📞 +977-01-5970165
+        🌐 fuse.ai
+        
+        You can also fill out the contact form on our website, and someone will reach out to you shortly.
+        
+        What specific information do you need help with?
 
-actions:
-  - utter_greet
-  - utter_goodbye
-  - utter_iamabot
-  - utter_mood_great
-  - utter_mood_unhappy
-  - utter_ask_application_process
-  - utter_ask_application_deadline
-  - utter_ask_career_in_ai
-  - utter_ask_placement_opportunities
-  - utter_ask_long_term_career
-  - utter_ask_program_duration
-  - utter_ask_preparation_courses
-  - utter_ask_ai_jobs_nepal
-  - utter_ask_education_requirement
-  - utter_ask_project_types
-  - utter_ask_accreditation
-  - utter_ask_class_recording
-  - utter_ask_project_work_requirement
-  - utter_ask_session_time
-  - action_enhanced_fallback
-  
+  utter_ask_exam_scheduling:
+    - text: |
+        **For Exam Scheduling:**
+        
+        📝 After submitting your AI Fellowship application, you'll receive:
+        1. Login credentials for Fuse Classroom
+        2. Instructions to book your exam slot
+        3. Available dates and times for the entrance exam
+        
+        If you haven't received these details:
+        - Check your email (including spam folder)
+        - Log in to Fuse Classroom portal
+        - Contact: info@fusemachines.com
+        
+        Have you already submitted your application?
+    - text: |
+        To schedule your entrance exam:
+        
+        ✓ Log in to your Fuse Classroom account
+        ✓ Look for the exam scheduling form/announcement
+        ✓ Select your preferred date and time
+        ✓ Submit your choice
+        
+        If you're facing issues, please contact:
+        📧 info@fusemachines.com
+        📞 +977-01-5970165
+        
+        Need help with anything else?
 
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  utter_request_technical_support:
+    - text: |
+        I'm sorry you're experiencing technical difficulties! 
+        
+        **Immediate Steps:**
+        1. Try clearing your browser cache and cookies
+        2. Use an updated browser (Chrome, Firefox, Safari)
+        3. Check your internet connection
+        4. Try logging in from a different device
+        
+        **Still having issues?**
+        Please contact our technical support team:
+        📧 info@fusemachines.com
+        📞 +977-01-5970165
+        
+        Provide them with:
+        - Your registered email
+        - Screenshot of the error (if possible)
+        - Description of the issue
+        
+        They'll assist you promptly!
+    - text: |
+        Sorry about the technical trouble!
+        
+        **Quick Fixes:**
+        - Refresh the page
+        - Clear cache and cookies
+        - Try a different browser
+        - Check internet connection
+        
+        **Contact Tech Support:**
+        📧 info@fusemachines.com
+        📞 +977-01-5970165
+        
+        Include your email and error details for faster resolution.
+
+  utter_request_exam_reschedule:
+    - text: |
+        I understand you need to reschedule your exam.
+        
+        **Please contact us immediately:**
+        📧 info@fusemachines.com
+        📞 +977-01-5970165
+        
+        **Include in your message:**
+        - Your full name and registered email
+        - Original exam date and time
+        - Reason for rescheduling
+        - Preferred new date (if applicable)
+        
+        Our team will review your request and get back to you. Rescheduling is subject to availability and approval.
+        
+        Is there anything else I can help you with?
+    - text: |
+        For exam rescheduling requests:
+        
+        🔄 Contact our team urgently:
+        - Email: info@fusemachines.com
+        - Phone: +977-01-5970165
+        
+        📝 Provide:
+        - Your registration details
+        - Reason for rescheduling
+        - Medical certificate (if health-related)
+        
+        The team will assist based on policy and availability.
+
+  utter_confirm_application_status:
+    - text: |
+        To check your application status:
+        
+        **Option 1:** Log in to Fuse Classroom
+        - Use your registered email
+        - Check the dashboard for updates
+        
+        **Option 2:** Check your email
+        - Look for confirmation email
+        - Check spam/junk folder
+        
+        **Option 3:** Contact us
+        📧 info@fusemachines.com
+        📞 +977-01-5970165
+        Provide your full name and registered email
+        
+        Usually, confirmation emails are sent within 24-48 hours of submission.
+    - text: |
+        Let's verify your application status!
+        
+        ✓ Check your email for confirmation (including spam)
+        ✓ Log in to Fuse Classroom portal
+        ✓ Contact us with your details:
+          - Email: info@fusemachines.com
+          - Phone: +977-01-5970165
+        
+        Our team can confirm your application status within a few hours.
+
+  utter_confirm_interview_details:
+    - text: |
+        **To confirm your interview details:**
+        
+        ✅ Check the email invitation carefully
+        ✅ Note the timezone mentioned
+        ✅ Convert to your local time if needed
+        
+        If you have questions about:
+        - Interview timing
+        - Interview format
+        - Technical setup
+        
+        Please contact:
+        📧 info@fusemachines.com
+        📞 +977-01-5970165
+        
+        It's better to confirm early to avoid any confusion!
+    - text: |
+        For interview confirmation:
+        
+        📧 Reply to the interview invitation email
+        📞 Call +977-01-5970165
+        💬 Email: info@fusemachines.com
+        
+        Our team will confirm all details and answer any questions you have.
+
+  utter_request_score_review:
+    - text: |
+        **For Exam Score Review:**
+        
+        If you believe there's an error in your exam results:
+        
+        📧 Email: info@fusemachines.com
+        📞 Phone: +977-01-5970165
+        
+        **Include:**
+        - Your full name and registration email
+        - Exam date
+        - Specific questions you want reviewed
+        - Screenshots (if you have them)
+        - Detailed explanation of the issue
+        
+        The academic team will review your request and respond within 3-5 business days.
+        
+        Please note: Score reviews are conducted carefully but adjustments are made only if there's a clear error.
+    - text: |
+        To request a score review:
+        
+        📝 Contact our academic team:
+        - Email: info@fusemachines.com
+        - Phone: +977-01-5970165
+        
+        📎 Provide:
+        - Your exam details
+        - Specific concerns
+        - Supporting evidence
+        
+        Reviews typically take 3-5 business days.
+
+  utter_ask_career_guidance:
+    - text: |
+        **Career Guidance at Fusemachines:**
+        
+        We offer guidance to help you choose the right path:
+        
+        🎯 **For Beginners:**
+        - Start with Foundation in AI
+        - Build fundamentals in Python and Math
+        
+        🎯 **For Students:**
+        - AI Fellowship (comprehensive 6-month program)
+        - Hands-on projects and mentorship
+        
+        🎯 **For Professionals:**
+        - AI2Go Workshop (non-technical friendly)
+        - Microdegree for specialization
+        
+        📞 Schedule a counseling session:
+        - Email: info@fusemachines.com
+        - Phone: +977-01-5970165
+        
+        Tell me about your background, and I can suggest the best program for you!
+    - text: |
+        Let's find the right program for you!
+        
+        🎓 **Tell me about:**
+        - Your current education/work
+        - Your AI learning goals
+        - Your time commitment
+        
+        Based on this, I can recommend:
+        ✓ Foundation courses (beginners)
+        ✓ AI Fellowship (students/graduates)
+        ✓ Microdegree (intermediate learners)
+        ✓ AI2Go (professionals)
+        
+        Or contact our counseling team:
+        📧 info@fusemachines.com | 📞 +977-01-5970165
+
+  utter_request_partnership:
+    - text: |
+        **Partnership Opportunities:**
+        
+        Thank you for your interest in partnering with Fusemachines!
+        
+        We collaborate with:
+        - Educational institutions
+        - Corporate organizations
+        - Technology companies
+        - Community organizations
+        
+        **To discuss partnership opportunities:**
+        📧 Email: info@fusemachines.com
+        📞 Phone: +977-01-5970165
+        
+        Please include:
+        - Your organization details
+        - Type of collaboration you're interested in
+        - Your contact information
+        
+        Our business development team will reach out to you!
+    - text: |
+        Great to hear about potential collaboration!
+        
+        🤝 **Partnership Inquiries:**
+        
+        Contact our team at:
+        📧 info@fusemachines.com
+        📞 +977-01-5970165
+        
+        Mention:
+        - Your organization
+        - Collaboration interests
+        - How we can work together
+        
+        Looking forward to potential partnership!
+
+  utter_default:
+    - text: |
+        I'm not sure I understood that correctly. 
+        
+        I can help you with:
+        • Course information
+        • Admission process
+        • Fees and schedules
+        • Eligibility criteria
+        • Technical support
+        
+        Could you please rephrase your question?
+    - text: "I didn't quite get that. Could you please ask in a different way? I'm here to help with information about Fusemachines programs!"
+
+  utter_ask_faq:
+    - text: |
+        **Frequently Asked Questions:**
+        
+        ❓ What programs do you offer?
+        ❓ How do I apply?
+        ❓ What are the fees?
+        ❓ When does the next batch start?
+        ❓ Am I eligible?
+        ❓ Is it online or offline?
+        
+        Which would you like to know about?
