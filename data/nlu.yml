@@ -1,268 +1,65 @@
 version: "3.1"
 
 nlu:
-- intent: ask_course_info
-  examples: |
-    - I want to know about the [AI](topic) course
-    - Tell me about your [programs](program_type)
-    - What courses do you offer?
-    - Can you tell me about [beginner](course_level) courses?
-    - I want to know more about this [program](program_type)
-    - What is this [fellowship](program_type)?
-    - What programs do you have for [AI](topic)?
-    - I want to know about the [Fuse AI](organization_name)
-    - What courses do you provide for [AI](topic)?
-    - Tell me details about the [course](program_type)
-    - What is the [Microdegree](course_name) in AI?
-    - Information about [Foundation](course_level) in AI
-    - What programs are available?
-    - Tell me about your [AI](topic) courses
-    - [Course](program_type) information please
-    - What can I learn here?
-    - Looking for [AI](topic) courses
-    - Need [course](program_type) details
-    - What [training](program_type) do you offer?
-    
-- intent: ask_admission_process
-  examples: |
-    - How can I [enroll](action_type)?
-    - I want to join this [course](program_type)
-    - How do I [apply](action_type)?
-    - What is the [enrollment](action_type) process?
-    - I would like to enroll in the [AI](topic) course
-    - How can I [register](action_type)?
-    - I want to be part of this [program](program_type)
-    - Tell me the admission procedure
-    - How to join the [fellowship](program_type)?
-    - I want to apply for [AI Fellowship](course_name)
-    - What is the [application](action_type) process?
-    - How do I get admitted?
-    - I want to join the [AI2Go Workshop](course_name)
-    - Can I enroll [now](time_reference)?
-    - I'm interested in joining
-    - How to become part of [Fuse Machines](organization_name)?
-    - [Registration](action_type) process please
-    - I want to start learning [AI](topic)
-    - How do I [sign up](action_type)?
-    - [Application](action_type) procedure please
+  # Single intents
+  - intent: ask_fees
+    examples: |
+      - What is the course fee?
+      - How much does it cost?
+      - Tell me the price
+      - Fee structure
+      - How much to pay?
 
+  - intent: ask_batch_schedule
+    examples: |
+      - When will the next batch start?
+      - What is the course start date?
+      - Starting date for the next batch
+      - When can I join?
 
-- intent: ask_batch_schedule
-  examples: |
-    - When will the next batch start?
-    - What is the course start date?
-    - When does the program begin?
-    - Next batch timing?
-    - When can I start?
-    - What are the class timings?
-    - When will classes commence?
-    - Course starting date?
-    - When does the AI Fellowship start?
-    - Next cohort start date?
-    - When will new sessions start?
-    - What is the program schedule?
-    - Class start date please
-    - When is the next intake?
-    - Batch timing information
-    - When can I join?
-    - Course commencement date?
-    - When does training begin?
-    - Next session start date?
-    - When will the 2026 cohort start?
+  - intent: ask_duration
+    examples: |
+      - How long is the course?
+      - Course duration?
+      - How many months is the program?
+      - Duration of the course
 
-- intent: ask_eligibility
-  examples: |
-    - What are the requirements?
-    - Am I eligible for this course?
-    - What are the basic requirements?
-    - Eligibility criteria please
-    - What qualifications do I need?
-    - Can I apply with 12th grade?
-    - Do I need a bachelor's degree?
-    - What are the prerequisites?
-    - Am I qualified to join?
-    - What criteria do I need to meet?
-    - Can beginners apply?
-    - Is this for IT professionals only?
-    - Can I join without a degree?
-    - What preparation do I need?
-    - Admission criteria please
-    - Who can apply?
-    - What background is required?
-    - Can non-technical people join?
-    - Do I qualify for this?
-    - What skills are needed?
+  - intent: ask_location_mode
+    examples: |
+      - Is the class online or offline?
+      - Where are the classes held?
+      - Mode of the course (online/offline)
+      - Location and mode of study
 
-- intent: ask_fees
-  examples: |
-    - What is the course fee?
-    - How much does it cost?
-    - What are the charges?
-    - Is it free?
-    - Course pricing please
-    - What is the fee structure?
-    - How much do I need to pay?
-    - Is there any cost?
-    - What's the price?
-    - Fee details please
-    - Do I have to pay?
-    - Cost of the program?
-    - Is this course paid?
-    - What are the fees?
-    - Price information please
-    - How expensive is it?
-    - What's the total cost?
-    - Is there any charge?
-    - Free or paid?
-    - Course fees?
+  - intent: ask_course_info
+    examples: |
+      - Tell me about your courses
+      - What programs do you offer?
+      - I want to know about AI courses
+      - Course information please
 
-- intent: ask_duration
-  examples: |
-    - How long is the course?
-    - What is the program duration?
-    - Course length?
-    - How many weeks?
-    - How many months is it?
-    - What is the time period?
-    - Duration of the program?
-    - How long does it take?
-    - Course timeline?
-    - Total duration please
-    - How many hours?
-    - Length of the course?
-    - Time commitment required?
-    - How long to complete?
-    - Program length?
+  - intent: greet
+    examples: |
+      - Hello
+      - Hi
+      - Hey
+      - Good morning
+      - Good afternoon
+      - Hi there
+      - Greetings
 
+  - intent: thank
+    examples: |
+      - Thanks
+      - Thank you
+      - Thanks a lot
+      - Much appreciated
+      - Thank you so much
 
-- intent: ask_location_mode
-  examples: |
-    - Is it online or offline?
-    - Can I take classes remotely?
-    - Is this course online?
-    - Do you have physical classes?
-    - Where are the classes held?
-    - Online or in-person?
-    - Can I attend from home?
-    - Is remote learning available?
-    - What is the delivery method?
-    - Virtual or physical classes?
-
-- intent: ask_contact
-  examples: |
-    - Can you contact me?
-    - Please call me
-    - I need to talk to someone
-    - Can I get a call?
-    - Contact me regarding this
-    - I want to speak with someone
-    - Please reach out to me
-    - Can someone call me?
-    - I need assistance over phone
-    - Get in touch with me please
-
-- intent: ask_exam_scheduling
-  examples: |
-    - How can I book exam date?
-    - When is my exam?
-    - How to schedule the test?
-    - Exam date booking
-    - When can I take the exam?
-    - How to book exam slot?
-    - Test scheduling please
-    - When is the entrance exam?
-
-- intent: request_technical_support
-  examples: |
-    - I'm having technical issues
-    - The camera is not working
-    - I can't submit my exam
-    - Login problem
-    - Website error
-    - I didn't receive login credentials
-    - Portal not showing anything
-    - Technical issue with platform
-    - Can't access the classroom
-    - 403 error problem
-    - Password not working
-    - Not getting confirmation email
-
-- intent: request_exam_reschedule
-  examples: |
-    - I missed my entrance exam
-    - Can I reschedule my exam?
-    - Need another exam slot
-    - Missed the test due to health issue
-    - Can I take exam again?
-    - Reschedule my entrance exam
-    - Give me another shift please
-    - I couldn't attend the exam
-
-- intent: confirm_application_status
-  examples: |
-    - Is my application submitted?
-    - Did I apply successfully?
-    - Application status check
-    - Was my form received?
-    - Did you get my application?
-    - Confirmation of submission
-    - Is my registration complete?
-
-- intent: confirm_interview_details
-  examples: |
-    - Is my interview time correct?
-    - Confirm interview schedule
-    - Verify interview timing
-    - Is this the right time?
-    - Interview confirmation needed
-
-- intent: request_score_review
-  examples: |
-    - Check my exam score
-    - I think there's an error in marking
-    - Review my results please
-    - Score reconsideration request
-    - My marks seem wrong
-
-- intent: ask_career_guidance
-  examples: |
-    - I need career counseling
-    - Which course suits my background?
-    - Career guidance please
-    - Help me choose a program
-    - What should I learn?
-    - Career path advice needed
-
-- intent: request_partnership
-  examples: |
-    - I want to collaborate
-    - Partnership opportunity
-    - Can we work together?
-    - Collaboration inquiry
-    - We want to partner with you
-
-- intent: greet
-  examples: |
-    - Hello
-    - Hi
-    - Hey
-    - Good morning
-    - Good afternoon
-    - Hi there
-    - Greetings
-
-- intent: thank
-  examples: |
-    - Thanks
-    - Thank you
-    - Thanks a lot
-    - Much appreciated
-    - Thank you so much
-
-- intent: goodbye
-  examples: |
-    - Bye
-    - Goodbye
-    - See you later
-    - Talk to you later
-    - Have a good day
+  - intent: goodbye
+    examples: |
+      - Bye
+      - Goodbye
+      - See you later
+      - Talk to you later
+      - Have a good day

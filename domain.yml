@@ -1,9 +1,42 @@
 version: "3.1"
 
 intents:
+  - ask_batch_schedule
+  - ask_fees
+  - ask_duration
+  - ask_location_mode
   - greet
-  - goodbye
   - thank
+  - goodbye
+
+
+
+responses:
+  utter_greet:
+  - text: "Hello! Welcome to Fuse AI. How can I assist you today?"
+  - text: "Hi there! I'm here to help you with information about our AI courses and programs."
+  - text: "Hello! Looking to learn about our AI programs? I'm here to help!"
+
+  utter_thank:
+  - text: "You're welcome! Feel free to ask if you need anything else."
+  - text: "Happy to help! Let me know if you have any other questions."
+  - text: "My pleasure! Is there anything else you'd like to know?"
+
+  utter_goodbye:
+  - text: "Goodbye! Have a great day!"
+  - text: "See you later! Feel free to reach out anytime."
+  - text: "Take care! We're here whenever you need us."
+
+
+  utter_batch_schedule:
+  - text: "Our next batch starts on [DATE]. Classes are held [SCHEDULE]. Would you like to know more details about the schedule?"
+
+ 
+  utter_fees:
+  - text: "The course fee depends on the program you choose. We offer flexible payment options and scholarships. Would you like to know about a specific program's fee structure?"
+
+
+  # Single intents
   - ask_course_info
   - ask_admission_process
   - ask_batch_schedule
@@ -11,463 +44,57 @@ intents:
   - ask_fees
   - ask_duration
   - ask_location_mode
-  - ask_contact
   - ask_exam_scheduling
-  - request_technical_support
-  - request_exam_reschedule
-  - confirm_application_status
-  - confirm_interview_details
-  - request_score_review
-  - ask_career_guidance
-  - request_partnership
+  - greet
+  - thank
+  - goodbye
+  
+  # Multi-intents
+  - ask_fees+ask_batch_schedule
+  - ask_fees+ask_duration
+  - ask_eligibility+ask_fees
+  - ask_batch_schedule+ask_location_mode
+  - ask_course_info+ask_eligibility+ask_fees
+  - greet+ask_course_info
 
-entities:
-  - course_name
-  - program_type
-  - course_level
-  - action_type
-  - topic
-  - time_reference
-  - organization_name
+
 
 responses:
-  utter_greet:
-    - text: "Hello! Welcome to .... How can I help you today?"
-    - text: "Hi there! I'm here to assist you with information about our AI programs. What would you like to know?"
-    - text: "Hello! Thanks for reaching out . How may I assist you?"
+  utter_fees_and_schedule:
+  - text: "Great questions! The course fee is [AMOUNT] with flexible payment options. Our next batch starts on [DATE] with classes held [SCHEDULE]. Would you like more details?"
 
-  utter_goodbye:
-    - text: "Goodbye! Feel free to reach out if you have more questions. Best of luck with your AI journey!"
-    - text: "Thank you for contacting us. Have a great day!"
-    - text: "See you later! Don't hesitate to contact us again if you need anything."
+  utter_fees_and_duration:
+  - text: "The program costs [AMOUNT] and runs for [DURATION]. We offer installment options to make it more affordable. Interested in enrolling?"
 
-  utter_thank:
-    - text: "You're welcome! Is there anything else I can help you with?"
-    - text: "Happy to help! Let me know if you have any other questions."
-    - text: "My pleasure! Feel free to ask if you need more information."
+  utter_eligibility_and_fees:
+  - text: "To be eligible, you need [REQUIREMENTS]. The course fee is [AMOUNT]. Based on your background, you may also qualify for scholarships. Shall I check your eligibility?"
 
-  utter_ask_course_info:
-    - text: |
-        We offer several AI programs:
-        
-        🎓 **AI Fellowship** - A comprehensive 6-month program covering ML, DL, and Generative AI with real-world projects
-        
-        📚 **Foundation in AI** - Perfect for beginners to build strong fundamentals in AI and Mathematics
-        
-        🎯 **Microdegree in AI** - In-depth specialization program with advanced AI concepts
-        
-        💼 **AI2Go Workshop** - Designed for professionals from non-technical backgrounds
-        
-        Which program interests you the most?
-    - text: |
-        we offers multiple learning paths:
-        
-        • AI Fellowship (6 months) - For graduates and final year students
-        • Foundation in AI - For those starting their AI journey
-        • Microdegree in AI - Advanced AI speciali/zation
-        • AI2Go Workshop - For working professionals
-        
-        Would you like detailed information about any specific program?
+  utter_schedule_and_mode:
+  - text: "Our next batch starts on [DATE]. Classes are available in both online and offline modes. Online classes offer live sessions with recordings. Which format interests you?"
 
-  utter_ask_admission_process:
-    - text: |
-        Here's how to apply to our programs:
-        
-        **For AI Fellowship:**
-        1. Fill out the application form on our website
-        2. Take the entrance examination
-        3. Selected candidates will be called for an interview
-        4. Final selection and enrollment
-        
-        **For Foundation/Microdegree courses:**
-        1. Visit  and complete the registration form
-        2. Our team will contact you with further details
-        3. Complete the payment process (if applicable)
-        4. Start your learning journey!
-        
-        Would you like me to share the application link?
-    - text: |
-        The admission process is simple:
-        
-        ✅ Visit our website 
-        ✅ Fill out the application form with your details
-        ✅ For AI Fellowship - appear for entrance exam and interview
-        ✅ For other courses - our team will guide you through enrollment
-        
-        Which program are you interested in applying for?
+actions:
+  - utter_fees_and_schedule
+  - utter_fees_and_duration
+  - utter_eligibility_and_fees
+  - utter_schedule_and_mode
 
-  utter_ask_batch_schedule:
-    - text: |
-        For the most accurate and up-to-date batch schedules, I recommend:
-        
-        
-        
-        Batch schedules are typically announced on our website and social media channels. The AI Fellowship usually opens applications once a year, while Foundation and Microdegree courses have multiple batches throughout the year.
-        
-        Would you like to know about any specific program?
-    - text: |
-        Batch schedules vary by program:
-        
-        
-        
-        For the latest schedule, please:
-        
-        
-        Can I help you with anything else?
-
-  utter_ask_eligibility:
-    - text: |
-        **Eligibility Criteria:**
-        
-        📌 **AI Fellowship:**
-        - Final year bachelor's students OR
-        - Graduates OR
-        - Working professionals
-        - Basic knowledge of programming is beneficial
-        
-        📌 **Foundation in AI:**
-        - Anyone interested in learning AI (no prerequisites)
-        - High school graduates and above
-        
-        📌 **Microdegree in AI:**
-        - Completed Foundation course OR
-        - Basic AI/ML knowledge
-        
-        📌 **AI2Go Workshop:**
-        - Working professionals from any background
-        - No technical prerequisites required
-        
-        Which program are you considering?
-    - text: |
-        Here are the basic requirements:
-        
-        ✓ **AI Fellowship** - Bachelor's final year or graduate, passionate about AI
-        ✓ **Foundation Courses** - Open to all, no prior experience needed
-        ✓ **Microdegree** - Foundation in AI completed or equivalent knowledge
-        ✓ **AI2Go Workshop** - Anyone wanting to learn AI applications
-        
-        Most programs are designed to accommodate learners from diverse backgrounds. Do you meet these criteria?
-
-  utter_ask_fees:
-    - text: |
-        **Fee Information:**
-        
-        💰 **AI Fellowship:**
-        - Full scholarship available for selected candidates
-        - Scholarships cover tuition fees completely
-        
-        💰 **Foundation in AI:**
-        - Please contact us for current pricing
-        - Early bird discounts may be available
-        
-        💰 **Microdegree in AI:**
-        - Variable pricing based on specialization
-        - Payment plans available
-        
-        💰 **AI2Go Workshop:**
-        - Corporate rates available
-        - Contact for group discounts
-        
-        For exact pricing, please contact:
-        
-        📞 +977-01-5970165
-        
-        Would you like information about payment options?
-    - text: |
-        Fees vary by program:
-        
-        🎓 **AI Fellowship** - FREE with full scholarship for selected candidates
-        📚 **Other Courses** - Paid programs with competitive pricing
-        
-        For detailed fee structure:
-        
-        - Call: +977-01-5970165
-        - Visit: our website
-        
-        We also offer payment plans for certain programs. Interested in a specific course?
-
-  utter_ask_duration:
-    - text: |
-        **Program Durations:**
-        
-        ⏱️ **AI Fellowship:** 6 months (intensive program)
-        ⏱️ **Foundation in AI:** 8-12 weeks
-        ⏱️ **Microdegree in AI:** 3-6 months (depending on specialization)
-        ⏱️ **AI2Go Workshop:** 2-4 weeks
-        
-        Most programs are designed to be flexible for working professionals and students.
-        
-        Which program's schedule would you like to know more about?
-    - text: |
-        Here's how long each program takes:
-        
-        • AI Fellowship - 6 months full program
-        • Foundation courses - 8-12 weeks
-        • Microdegree - 3-6 months
-        • Workshops - 2-4 weeks
-        
-        Need more details about any specific program?
-
+  - utter_greet
+  - utter_thank
+  - utter_goodbye
   
-  utter_ask_location_mode:
-    - text: |
-        **Course Delivery Modes:**
-        
-        🌐 **Online:**
-        - Most programs offer online learning options
-        - Live interactive sessions
-        - Access from anywhere
-        
-        🏢 **Hybrid:**
-        - Some programs combine online and in-person sessions
-        - Location: Kathmandu, Nepal (when applicable)
-        
-        🖥️ **Self-paced components:**
-        - Video lectures and assignments
-        - Flexible learning schedule
-        
-        The AI Fellowship and most courses are primarily online, making them accessible to learners across Nepal and globally.
-        
-        Which program are you interested in?
-    - text: |
-        Our programs are designed for flexibility:
-        
-        ✓ **Primarily Online** - Learn from anywhere
-        ✓ **Live Sessions** - Interactive virtual classes
-        ✓ **Recorded Content** - Access anytime
-        ✓ **Some In-Person Events** - Workshops, networking (optional)
-        
-        This makes our programs accessible whether you're in Kathmandu or elsewhere!
+  - utter_course_info
+  - utter_admission_process
+  - utter_batch_schedule
+  - utter_eligibility
+  - utter_fees
+  - utter_duration
+  - utter_location_mode
+  - utter_exam_scheduling
+  - utter_application_status
+  - utter_interview_details
+  - utter_career_guidance
+  
 
-  utter_ask_contact:
-    - text: |
-        **Contact us**
-        
-        
-        📍 **Address:** Dillibazar, Kathmandu, Nepal
-        
-        
-        
-        Our team typically responds within 24-48 hours. Feel free to reach out, and they'll be happy to assist you!
-        
-        Is there anything specific you'd like me to help you with right now?
-    - text: |
-        I'd be happy to connect you with our team!
-        
-        
-        
-        You can also fill out the contact form on our website, and someone will reach out to you shortly.
-        
-        What specific information do you need help with?
-
-  utter_ask_exam_scheduling:
-    - text: |
-        **For Exam Scheduling:**
-        
-        📝 After submitting your AI Fellowship application, you'll receive:
-        1. Login credentials for  Classroom
-        2. Instructions to book your exam slot
-        3. Available dates and times for the entrance exam
-        
-        If you haven't received these details:
-        - Check your email (including spam folder)
-        -
-        
-        Have you already submitted your application?
-    - text: |
-        To schedule your entrance exam:
-        
-        ✓ Log in to your Classroom account
-        ✓ Look for the exam scheduling form/announcement
-        ✓ Select your preferred date and time
-        ✓ Submit your choice
-        
-        If you're facing issues, please contact:
-       
-        
-        Need help with anything else?
-
-  utter_request_technical_support:
-    - text: |
-        I'm sorry you're experiencing technical difficulties! 
-        
-        **Immediate Steps:**
-        1. Try clearing your browser cache and cookies
-        2. Use an updated browser (Chrome, Firefox, Safari)
-        3. Check your internet connection
-        4. Try logging in from a different device
-        
-        **Still having issues?**
-        Please contact our technical support team:
-        
-        
-        Provide them with:
-        - Your registered email
-        - Screenshot of the error (if possible)
-        - Description of the issue
-        
-        They'll assist you promptly!
-    - text: |
-        Sorry about the technical trouble!
-        
-        **Quick Fixes:**
-        - Refresh the page
-        - Clear cache and cookies
-        - Try a different browser
-        - Check internet connection
-        
-        **Contact Tech Support:**
-        
-        
-        Include your email and error details for faster resolution.
-
-  utter_request_exam_reschedule:
-    - text: |
-        I understand you need to reschedule your exam.
-        
-        **Please contact us immediately:**
-        
-        
-        **Include in your message:**
-        - Your full name and registered email
-        - Original exam date and time
-        - Reason for rescheduling
-        - Preferred new date (if applicable)
-        
-        Our team will review your request and get back to you. Rescheduling is subject to availability and approval.
-        
-        Is there anything else I can help you with?
-    - text: |
-        For exam rescheduling requests:
-        
-        🔄 Contact our team urgently
-        
-        📝 Provide:
-        - Your registration details
-        - Reason for rescheduling
-        - Medical certificate (if health-related)
-        
-        The team will assist based on policy and availability.
-
-  utter_confirm_application_status:
-    - text: |
-        To check your application status:
-        
-        **Option 1:** Log in to Classroom
-        - Use your registered email
-        - Check the dashboard for updates
-        
-        **Option 2:** Check your email
-        - Look for confirmation email
-        - Check spam/junk folder
-        
-        **Option 3:** Contact us
-        
-        Provide your full name and registered email
-        
-        Usually, confirmation emails are sent within 24-48 hours of submission.
-    - text: |
-        Let's verify your application status!
-        
-        ✓ Check your email for confirmation (including spam)
-        ✓ Log in to  Classroom portal
-        ✓ Contact us with your details:
-          
-        
-        Our team can confirm your application status within a few hours.
-
-  utter_confirm_interview_details:
-    - text: |
-        **To confirm your interview details:**
-        
-        ✅ Check the email invitation carefully
-        ✅ Note the timezone mentioned
-        ✅ Convert to your local time if needed
-        
-        If you have questions about:
-        - Interview timing
-        - Interview format
-        - Technical setup
-        
-        
-        
-        It's better to confirm early to avoid any confusion!
-   
-
-  utter_request_score_review:
-    - text: |
-        
-        
-        **Include:**
-        - Your full name and registration email
-        - Exam date
-        - Specific questions you want reviewed
-        - Screenshots (if you have them)
-        - Detailed explanation of the issue
-        
-        The academic team will review your request and respond within 3-5 business days.
-        
-       
-
-  utter_ask_career_guidance:
-    - text: |
-        **Career Guidance :**
-        
-        We offer guidance to help you choose the right path:
-        
-        🎯 **For Beginners:**
-        - Start with Foundation in AI
-        - Build fundamentals in Python and Math
-        
-        🎯 **For Students:**
-        - AI Fellowship (comprehensive 6-month program)
-        - Hands-on projects and mentorship
-        
-        🎯 **For Professionals:**
-        -  Workshop (non-technical friendly)
-        - Microdegree for specialization
-        
-        
-        
-
-  utter_request_partnership:
-    - text: |
-        **Partnership Opportunities:**
-        
-        Thank you for your interest in partnering !
-        
-        We collaborate with:
-        - Educational institutions
-        - Corporate organizations
-        - Technology companies
-        - Community organizations
-        
-        
-        
-
-  utter_default:
-    - text: |
-        I'm not sure I understood that correctly. 
-        
-        I can help you with:
-        • Course information
-        • Admission process
-        • Fees and schedules
-        • Eligibility criteria
-        • Technical support
-        
-        Could you please rephrase your question?
-    - text: "I didn't quite get that. Could you please ask in a different way? I'm here to help with information about the programs!"
-
-  utter_ask_faq:
-    - text: |
-        **Frequently Asked Questions:**
-        
-        ❓ What programs do you offer?
-        ❓ How do I apply?
-        ❓ What are the fees?
-        ❓ When does the next batch start?
-        ❓ Am I eligible?
-        ❓ Is it online or offline?
-        
-        Which would you like to know about?
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
