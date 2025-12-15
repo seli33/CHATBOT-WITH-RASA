@@ -27,7 +27,10 @@ responses:
   - text: "Goodbye! Have a great day!"
   - text: "See you later! Feel free to reach out anytime."
   - text: "Take care! We're here whenever you need us."
-
+  
+  utter_fallback:
+  - text: "I'm sorry, I didn't quite understand that. Could you rephrase your question?"
+  - text: "I'm not sure I understood. Could you try asking in a different way?"
 actions:
   - action_handle_multi_intent
 

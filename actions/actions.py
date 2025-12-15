@@ -1,58 +1,112 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
-
-from typing import Text, Dict, Any, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-
-
+from typing import List, Dict, Any
 
 class ActionHandleMultiIntent(Action):
-    """Handling Multi intent"""
+    """
+    Custom action with aggressive multi-intent detection.
+    """
     
-    def name(self) :
+    def name(self) -> str:
         return "action_handle_multi_intent"
     
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
-            domain: Dict):
+            domain: Dict[str, Any]) -> List[Dict]:
         
-        #get ranked intent from the user message
-        intent_ranking=tracker.latest_message.get("intent_ranking", [])
-
-        responses=[]
-        threshold=0.5
-
-        for data in intent_ranking:
-            intent=data['name']
-            confidence=data['confidence']
-
-            if confidence < threshold:
-                continue
-
-            if intent == "ask_fees":
-                responses.append("The tuition is $5,000 per semester, lab fees $300, and application fee $50.")
-            elif intent == "ask_batch_schedule":
-                responses.append("The next batch starts on 1st March 2026.")
-            elif intent == "ask_duration":
-                responses.append("The course duration is 6 months.")
-            elif intent == "ask_location_mode":
-                responses.append("Classes are online and offline; you can choose the mode.")
-            elif intent == "ask_course_info":
-                responses.append("We offer AI, Data Science, and Web Development courses.")
-            elif intent == "greet":
-                responses.append("Hello! How can I help you today?")
-            elif intent == "thank":
-                responses.append("You're welcome!")
-            elif intent == "goodbye":
-                responses.append("Goodbye! Have a great day.")
+        # Get intent ranking
+        intent_ranking = tracker.latest_message.get("intent_ranking", [])
+        
+        # Define query intents
+        query_intents = {
+            "ask_fees", 
+            "ask_batch_schedule", 
+            "ask_duration", 
+            "ask_location_mode", 
+            "ask_course_info"
+        }
+        
+        # STRATEGY: Detect multi-intent based on confidence gap
+        detected_intents = []
+        
+        if intent_ranking:
+            # Always include top intent if it's a query intent
+            top_intent = intent_ranking[0]
+            if top_intent["name"] in query_intents and top_intent["confidence"] >= 0.25:
+                detected_intents.append(top_intent["name"])
+                print(f"[DEBUG] Primary: {top_intent['name']} ({top_intent['confidence']:.3f})")
             
-            if responses:
-                dispatcher.utter_message("\n".join(responses))
-            else:
-                dispatcher.utter_message("Sorry, I didn't understand that.")
+            # Check subsequent intents
+            for intent_data in intent_ranking[1:6]:  # Check top 6
+                intent_name = intent_data["name"]
+                confidence = intent_data["confidence"]
+                
+                # Add if it's a query intent, meets threshold, and not duplicate
+                if (intent_name in query_intents and 
+                    confidence >= 0.2 and  # Lower threshold for secondary
+                    intent_name not in detected_intents):
+                    
+                    # Additional check: confidence should be reasonably close to top intent
+                    # (within 50% of top confidence)
+                    if len(detected_intents) > 0:
+                        confidence_ratio = confidence / intent_ranking[0]["confidence"]
+                        if confidence_ratio >= 0.35:  # At least 35% of top confidence
+                            detected_intents.append(intent_name)
+                            print(f"[DEBUG] Secondary: {intent_name} ({confidence:.3f})")
+                    else:
+                        detected_intents.append(intent_name)
+                        print(f"[DEBUG] Added: {intent_name} ({confidence:.3f})")
         
-            return []
+        print(f"[DEBUG] Final detected intents: {detected_intents}")
+        
+        # Define responses
+        intent_responses = {
+            "ask_fees": (
+                "💰 **Course Fees:**\n"
+                "• Tuition: $5,000 per semester\n"
+                "• Lab fees: $300\n"
+                "• Application fee: $50"
+            ),
+            "ask_batch_schedule": (
+                "📅 **Next Batch:**\n"
+                "The next batch starts on **March 1st, 2026**"
+            ),
+            "ask_duration": (
+                "⏱️ **Course Duration:**\n"
+                "The course is **6 months** long (24 weeks)"
+            ),
+            "ask_location_mode": (
+                "📍 **Class Mode:**\n"
+                "We offer both **online** and **offline** classes.\n"
+                "You can choose the mode that works best for you!"
+            ),
+            "ask_course_info": (
+                "📚 **Our Courses:**\n"
+                "We offer the following programs:\n"
+                "• Artificial Intelligence (AI)\n"
+                "• Data Science\n"
+                "• Web Development"
+            ),
+        }
+        
+        # Build response
+        if detected_intents:
+            responses = [
+                intent_responses[intent] 
+                for intent in detected_intents 
+                if intent in intent_responses
+            ]
+            
+            if len(responses) > 1:
+                message = "Here's the information you requested:\n\n" + "\n\n".join(responses)
+            elif len(responses) == 1:
+                message = responses[0]
+            else:
+                dispatcher.utter_message(response="utter_fallback")
+                return []
+            
+            dispatcher.utter_message(text=message)
+        else:
+            dispatcher.utter_message(response="utter_fallback")
+        
+        return []

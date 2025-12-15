@@ -1,18 +1,55 @@
-# stories.yml
 version: "3.1"
 
 stories:
-- story: multi-intent handling
-  steps:
-    - intent: ask_fees
-    - action: action_handle_multi_intent
+  - story: Complete course inquiry flow
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_course_info
+      - action: action_handle_multi_intent
+      - intent: ask_fees
+      - action: action_handle_multi_intent
+      - intent: ask_batch_schedule
+      - action: action_handle_multi_intent
+      - intent: thank
+      - action: utter_thank
+      - intent: goodbye
+      - action: utter_goodbye
 
-- story: greet story
-  steps:
-    - intent: greet
-    - action: action_handle_multi_intent
+  - story: Quick fee inquiry
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_fees
+      - action: action_handle_multi_intent
+      - intent: thank
+      - action: utter_thank
 
-- story: goodbye story
-  steps:
-    - intent: goodbye
-    - action: action_handle_multi_intent
+  - story: Multi-question inquiry
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_fees
+      - action: action_handle_multi_intent
+      - intent: ask_duration
+      - action: action_handle_multi_intent
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Location and schedule inquiry
+    steps:
+      - intent: ask_location_mode
+      - action: action_handle_multi_intent
+      - intent: ask_batch_schedule
+      - action: action_handle_multi_intent
+      - intent: thank
+      - action: utter_thank
+
+  - story: General inquiry
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_course_info
+      - action: action_handle_multi_intent
+      - intent: goodbye
+      - action: utter_goodbye

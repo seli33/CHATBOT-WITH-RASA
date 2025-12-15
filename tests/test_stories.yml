@@ -1,179 +1,55 @@
-# stories.yml
 version: "3.1"
 
 stories:
-  - story: User greeting and course inquiry
+  - story: Complete course inquiry flow
     steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: ask_course_info
-    - action: utter_course_info
-    - intent: thank
-    - action: utter_thank
-
-  - story: Complete admission inquiry flow
-    steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: ask_admission_process
-    - action: utter_admission_process
-    - intent: ask_eligibility
-    - action: utter_eligibility
-    - intent: ask_fees
-    - action: utter_fees
-    - intent: ask_batch_schedule
-    - action: utter_batch_schedule
-    - intent: thank
-    - action: utter_thank
-    - intent: goodbye
-    - action: utter_goodbye
-
-  - story: Course details inquiry
-    steps:
-    - intent: ask_course_info
-    - action: utter_course_info
-    - intent: ask_duration
-    - action: utter_duration
-    - intent: ask_location_mode
-    - action: utter_location_mode
-    - intent: ask_fees
-    - action: utter_fees
-
-  - story: Eligibility and admission flow
-    steps:
-    - intent: ask_eligibility
-    - action: utter_eligibility
-    - intent: ask_admission_process
-    - action: utter_admission_process
-    - intent: ask_batch_schedule
-    - action: utter_batch_schedule
-
-  - story: Fee and schedule inquiry
-    steps:
-    - intent: ask_fees
-    - action: utter_fees
-    - intent: ask_batch_schedule
-    - action: utter_batch_schedule
-    - intent: ask_duration
-    - action: utter_duration
-
-  - story: Exam and interview process
-    steps:
-    - intent: ask_admission_process
-    - action: utter_admission_process
-    - intent: ask_exam_scheduling
-    - action: utter_exam_scheduling
-    - intent: confirm_interview_details
-    - action: utter_interview_details
-
-  - story: Application status check
-    steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: confirm_application_status
-    - action: utter_application_status
-    - intent: confirm_interview_details
-    - action: utter_interview_details
-
-  - story: Career guidance flow
-    steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: ask_career_guidance
-    - action: utter_career_guidance
-    - intent: ask_course_info
-    - action: utter_course_info
-    - intent: ask_eligibility
-    - action: utter_eligibility
-
-  - story: Online vs offline inquiry
-    steps:
-    - intent: ask_location_mode
-    - action: utter_location_mode
-    - intent: ask_batch_schedule
-    - action: utter_batch_schedule
-    - intent: ask_fees
-    - action: utter_fees
-
-  - story: Quick batch and timing inquiry
-    steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: ask_batch_schedule
-    - action: utter_batch_schedule
-    - intent: ask_location_mode
-    - action: utter_location_mode
-    - intent: goodbye
-    - action: utter_goodbye
-
-  - story: Full enrollment journey
-    steps:
-    - intent: greet
-    - action: utter_greet
-    - intent: ask_course_info
-    - action: utter_course_info
-    - intent: ask_eligibility
-    - action: utter_eligibility
-    - intent: ask_fees
-    - action: utter_fees
-    - intent: ask_duration
-    - action: utter_duration
-    - intent: ask_location_mode
-    - action: utter_location_mode
-    - intent: ask_batch_schedule
-    - action: utter_batch_schedule
-    - intent: ask_admission_process
-    - action: utter_admission_process
-    - intent: thank
-    - action: utter_thank
-    - intent: goodbye
-    - action: utter_goodbye
-
-  - story: Career guidance to enrollment
-    steps:
-    - intent: ask_career_guidance
-    - action: utter_career_guidance
-    - intent: ask_eligibility
-    - action: utter_eligibility
-    - intent: ask_admission_process
-    - action: utter_admission_process
-    - intent: ask_batch_schedule
-    - action: utter_batch_schedule
-
-  - story: Exam scheduling and status check
-    steps:
-    - intent: ask_exam_scheduling
-    - action: utter_exam_scheduling
-    - intent: confirm_application_status
-    - action: utter_application_status
-    - intent: confirm_interview_details
-    - action: utter_interview_details
-    - intent: thank
-    - action: utter_thank
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_course_info
+      - action: action_handle_multi_intent
+      - intent: ask_fees
+      - action: action_handle_multi_intent
+      - intent: ask_batch_schedule
+      - action: action_handle_multi_intent
+      - intent: thank
+      - action: utter_thank
+      - intent: goodbye
+      - action: utter_goodbye
 
   - story: Quick fee inquiry
     steps:
-    - intent: ask_fees
-    - action: utter_fees
-    - intent: thank
-    - action: utter_thank
-    - intent: goodbye
-    - action: utter_goodbye
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_fees
+      - action: action_handle_multi_intent
+      - intent: thank
+      - action: utter_thank
 
-  - story: Duration and commitment inquiry
+  - story: Multi-question inquiry
     steps:
-    - intent: ask_duration
-    - action: utter_duration
-    - intent: ask_batch_schedule
-    - action: utter_batch_schedule
-    - intent: ask_location_mode
-    - action: utter_location_mode
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_fees
+      - action: action_handle_multi_intent
+      - intent: ask_duration
+      - action: action_handle_multi_intent
+      - intent: goodbye
+      - action: utter_goodbye
 
-  - story: Eligibility to career guidance
+  - story: Location and schedule inquiry
     steps:
-    - intent: ask_eligibility
-    - action: utter_eligibility
-    - intent: ask_career_guidance
-    - action: utter_career_guidance
-    - intent: ask_course_info
-    - action: utter_course_info
+      - intent: ask_location_mode
+      - action: action_handle_multi_intent
+      - intent: ask_batch_schedule
+      - action: action_handle_multi_intent
+      - intent: thank
+      - action: utter_thank
+
+  - story: General inquiry
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_course_info
+      - action: action_handle_multi_intent
+      - intent: goodbye
+      - action: utter_goodbye
