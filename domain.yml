@@ -5,6 +5,7 @@ intents:
   - ask_fees
   - ask_duration
   - ask_location_mode
+  - ask_course_info
   - greet
   - thank
   - goodbye
@@ -27,74 +28,10 @@ responses:
   - text: "See you later! Feel free to reach out anytime."
   - text: "Take care! We're here whenever you need us."
 
-
-  utter_batch_schedule:
-  - text: "Our next batch starts on [DATE]. Classes are held [SCHEDULE]. Would you like to know more details about the schedule?"
-
- 
-  utter_fees:
-  - text: "The course fee depends on the program you choose. We offer flexible payment options and scholarships. Would you like to know about a specific program's fee structure?"
-
-
-  # Single intents
-  - ask_course_info
-  - ask_admission_process
-  - ask_batch_schedule
-  - ask_eligibility
-  - ask_fees
-  - ask_duration
-  - ask_location_mode
-  - ask_exam_scheduling
-  - greet
-  - thank
-  - goodbye
-  
-  # Multi-intents
-  - ask_fees+ask_batch_schedule
-  - ask_fees+ask_duration
-  - ask_eligibility+ask_fees
-  - ask_batch_schedule+ask_location_mode
-  - ask_course_info+ask_eligibility+ask_fees
-  - greet+ask_course_info
-
-
-
-responses:
-  utter_fees_and_schedule:
-  - text: "Great questions! The course fee is [AMOUNT] with flexible payment options. Our next batch starts on [DATE] with classes held [SCHEDULE]. Would you like more details?"
-
-  utter_fees_and_duration:
-  - text: "The program costs [AMOUNT] and runs for [DURATION]. We offer installment options to make it more affordable. Interested in enrolling?"
-
-  utter_eligibility_and_fees:
-  - text: "To be eligible, you need [REQUIREMENTS]. The course fee is [AMOUNT]. Based on your background, you may also qualify for scholarships. Shall I check your eligibility?"
-
-  utter_schedule_and_mode:
-  - text: "Our next batch starts on [DATE]. Classes are available in both online and offline modes. Online classes offer live sessions with recordings. Which format interests you?"
-
 actions:
-  - utter_fees_and_schedule
-  - utter_fees_and_duration
-  - utter_eligibility_and_fees
-  - utter_schedule_and_mode
+  - action_handle_multi_intent
 
-  - utter_greet
-  - utter_thank
-  - utter_goodbye
   
-  - utter_course_info
-  - utter_admission_process
-  - utter_batch_schedule
-  - utter_eligibility
-  - utter_fees
-  - utter_duration
-  - utter_location_mode
-  - utter_exam_scheduling
-  - utter_application_status
-  - utter_interview_details
-  - utter_career_guidance
-  
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

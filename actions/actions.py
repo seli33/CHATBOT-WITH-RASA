@@ -7,74 +7,52 @@
 from typing import Text, Dict, Any, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-import logging
 
-logger = logging.getLogger(__name__)
 
-class ActionEnhancedFallback(Action):
-    """Simplified fallback - NLU handles specific intents now."""
+
+class ActionHandleMultiIntent(Action):
+    """Handling Multi intent"""
     
-    def name(self) -> Text:
-        return "action_enhanced_fallback"
+    def name(self) :
+        return "action_handle_multi_intent"
     
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            domain: Dict):
         
-        # Get user's message for logging
-        user_message = tracker.latest_message.get('text', '').lower()
-        logger.info(f"Fallback triggered for query: '{user_message}'")
+        #get ranked intent from the user message
+        intent_ranking=tracker.latest_message.get("intent_ranking", [])
+
+        responses=[]
+        threshold=0.5
+
+        for data in intent_ranking:
+            intent=data['name']
+            confidence=data['confidence']
+
+            if confidence < threshold:
+                continue
+
+            if intent == "ask_fees":
+                responses.append("The tuition is $5,000 per semester, lab fees $300, and application fee $50.")
+            elif intent == "ask_batch_schedule":
+                responses.append("The next batch starts on 1st March 2026.")
+            elif intent == "ask_duration":
+                responses.append("The course duration is 6 months.")
+            elif intent == "ask_location_mode":
+                responses.append("Classes are online and offline; you can choose the mode.")
+            elif intent == "ask_course_info":
+                responses.append("We offer AI, Data Science, and Web Development courses.")
+            elif intent == "greet":
+                responses.append("Hello! How can I help you today?")
+            elif intent == "thank":
+                responses.append("You're welcome!")
+            elif intent == "goodbye":
+                responses.append("Goodbye! Have a great day.")
+            
+            if responses:
+                dispatcher.utter_message("\n".join(responses))
+            else:
+                dispatcher.utter_message("Sorry, I didn't understand that.")
         
-        # Count recent fallbacks in this conversation
-        fallback_count = self._count_recent_fallbacks(tracker)
-        
-        # Progressive fallback strategy
-        if fallback_count == 0:
-            # First fallback: Ask for rephrase
-            dispatcher.utter_message(
-                text="Hmm, I'm not sure I understood. Could you try rephrasing your question? "
-                     "Or ask me about:\n• How to apply\n• Program duration\n• Career opportunities\n• Admission requirements"
-            )
-        elif fallback_count == 1:
-            # Second fallback: More specific suggestions
-            dispatcher.utter_message(
-                text="Let me help you better! Here are specific topics I can answer:\n\n"
-                     " **Application & Enrollment:**\n"
-                     "• 'How do I apply for the program?'\n"
-                     "• 'What is the application deadline?'\n"
-                     "• 'What background do I need to join?'\n\n"
-                     "**Program Details:**\n"
-                     "• 'How long is the program?'\n"
-                     "• 'What time are the classes?'\n"
-                     "• 'Are classes recorded?'\n"
-                     "• 'Do I need to do project work?'\n\n"
-                     "**Career & Jobs:**\n"
-                     "• 'What are AI career opportunities?'\n"
-                     "• 'Is there placement support?'\n"
-                     "• 'What is the AI job market in Nepal?'\n\n"
-                     "**Certification:**\n"
-                     "• 'Is the program accredited?'\n"
-                     "• 'What certificate will I get?'\n\n"
-                     "Try asking one of these questions!"
-            )
-        else:
-            # Third+ fallback: Offer human help
-            dispatcher.utter_message(
-                text="I'm still having trouble understanding. Would you like me to:\n"
-                     "1. Connect you with a human advisor\n"
-                     "2. Email you more detailed information\n"
-                     "3. Schedule a callback\n\n"
-                     "Just say 'human help', 'email info', or 'schedule call'!"
-            )
-        
-        return []
-    
-    def _count_recent_fallbacks(self, tracker: Tracker) -> int:
-        """Count how many times fallback was triggered recently."""
-        fallback_count = 0
-        for event in reversed(tracker.events):
-            if event.get("event") == "action" and event.get("name") == self.name():
-                fallback_count += 1
-            elif event.get("event") == "user":
-                break
-        return fallback_count
+            return []

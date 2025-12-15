@@ -18,57 +18,32 @@ rules:
     - intent: thank
     - action: utter_thank
 
-  - rule: Provide course information
+    # Rule for handling fees
+  - rule: Ask course fees
     steps:
-    - intent: ask_course_info
-    - action: utter_course_info
+      - intent: ask_fees
+      - action: action_handle_multi_intent
 
-  - rule: Explain admission process
+  # Rule for handling batch schedule
+  - rule: Ask batch schedule
     steps:
-    - intent: ask_admission_process
-    - action: utter_admission_process
+      - intent: ask_batch_schedule
+      - action: action_handle_multi_intent
 
-  - rule: Provide batch schedule
+  # Rule for handling course duration
+  - rule: Ask course duration
     steps:
-    - intent: ask_batch_schedule
-    - action: utter_batch_schedule
+      - intent: ask_duration
+      - action: action_handle_multi_intent
 
-  - rule: Explain eligibility criteria
+  # Rule for handling location/mode
+  - rule: Ask location/mode
     steps:
-    - intent: ask_eligibility
-    - action: utter_eligibility
+      - intent: ask_location_mode
+      - action: action_handle_multi_intent
 
-  - rule: Provide fee information
+  # Rule for handling course info
+  - rule: Ask course info
     steps:
-    - intent: ask_fees
-    - action: utter_fees
-
-  - rule: Provide duration information
-    steps:
-    - intent: ask_duration
-    - action: utter_duration
-
-  - rule: Provide location and mode information
-    steps:
-    - intent: ask_location_mode
-    - action: utter_location_mode
-
-  - rule: Provide exam scheduling information
-    steps:
-    - intent: ask_exam_scheduling
-    - action: utter_exam_scheduling
-
-  - rule: Confirm application status
-    steps:
-    - intent: confirm_application_status
-    - action: utter_application_status
-
-  - rule: Confirm interview details
-    steps:
-    - intent: confirm_interview_details
-    - action: utter_interview_details
-
-  - rule: Provide career guidance
-    steps:
-    - intent: ask_career_guidance
-    - action: utter_career_guidance
+      - intent: ask_course_info
+      - action: action_handle_multi_intent
