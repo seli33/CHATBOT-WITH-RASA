@@ -1,65 +1,548 @@
 version: "3.1"
 
 nlu:
-  # Single intents
-  - intent: ask_fees
-    examples: |
-      - What is the course fee?
-      - How much does it cost?
-      - Tell me the price
-      - Fee structure
-      - How much to pay?
+# Basic Intents
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - good afternoon
 
-  - intent: ask_batch_schedule
-    examples: |
-      - When will the next batch start?
-      - What is the course start date?
-      - Starting date for the next batch
-      - When can I join?
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - have a nice day
+    - good night
+    - see you around
+    - bye bye
 
-  - intent: ask_duration
-    examples: |
-      - How long is the course?
-      - Course duration?
-      - How many months is the program?
-      - Duration of the course
+- intent: affirm
+  examples: |
+    - yes
+    - correct
+    - indeed
+    - of course
+    - that sounds good
 
-  - intent: ask_location_mode
-    examples: |
-      - Is the class online or offline?
-      - Where are the classes held?
-      - Mode of the course (online/offline)
-      - Location and mode of study
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - not really
+    - no way
 
-  - intent: ask_course_info
-    examples: |
-      - Tell me about your courses
-      - What programs do you offer?
-      - I want to know about AI courses
-      - Course information please
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - extremely good
+    - so perfect
 
-  - intent: greet
-    examples: |
-      - Hello
-      - Hi
-      - Hey
-      - Good morning
-      - Good afternoon
-      - Hi there
-      - Greetings
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - unhappy
+    - not good
+    - very sad
 
-  - intent: thank
-    examples: |
-      - Thanks
-      - Thank you
-      - Thanks a lot
-      - Much appreciated
-      - Thank you so much
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
 
-  - intent: goodbye
-    examples: |
-      - Bye
-      - Goodbye
-      - See you later
-      - Talk to you later
-      - Have a good day
+# Core Application Intents
+
+- intent: ask_admission_eligibility
+  examples: |
+    - Am I eligible to apply for the [AI Fellowship](program_name)?
+    - Can I apply with a [computer science](qualification) background?
+    - I am a [second-year](course_level) [IT](qualification) student, am I eligible?
+    - Can a [BSc CSIT](qualification) student with [basic programming](course_name) apply?
+    - I have completed [Python](course_name) and [statistics](course_name) courses, am I eligible?
+    - Does the program accept [undergraduate](course_level) students?
+    - Are [final-year](course_level) students allowed to apply?
+    - What are the eligibility requirements?
+    - Do I need prior [AI](course_name) experience to be eligible?
+    - I am a [third year](course_level) student, can I apply?
+    - What qualifications do I need?
+    - I'm from a non-CS background, can I still apply?
+    - What are the basic requirements for the course?
+    - I recently completed 12th grade, am I eligible for [Microdegree in AI](program_name)?
+    - Is this program for beginners or [IT professionals](employment_status)?
+    - I'm studying in [India](location) but from [Nepal](location), am I eligible?
+    - Can someone who just finished SLC apply for [AI](course_name) education?
+    - I'm in [BBA](qualification), can I join the [Microdegree](program_name) program?
+    - What background is needed for [AI Fellowship](program_name)?
+    - I have foundation in [ML](course_name) and [DL](course_name), can I join specialization?
+    - I'm a [final year](course_level) student at [Herald College](organization), can I join?
+
+- intent: ask_admission_process
+  examples: |
+    - How do I enroll in this [course](program_name)?
+    - I want to join [AI Fellowship](program_name)
+    - How can I apply for this program?
+    - What is the enrollment process?
+    - How do I sign up for [Foundations in AI](program_name)?
+    - When does the application begin?
+    - How can I register?
+    - What are the procedures to apply?
+    - I want to participate in [Microdegree in AI](program_name), how do I start?
+    - How to join the [workshop](program_name)?
+    - Can you guide me on applying for your programs?
+    - I'm interested in enrolling, what's the process?
+    - How can I be part of [Fusemachines](organization) programs?
+    - What steps do I need to follow to apply?
+    - When can I apply for [AI Fellowship](program_name) [2025](date_time)?
+    - I want to join the [AI2Go Workshop](program_name), how do I proceed?
+    - How do I get enrolled in the [micro degree](program_name)?
+    - Can I apply directly or is there a procedure?
+    - I want to learn [AI](course_name), how can I enroll?
+    - What is the application timeline?
+
+- intent: ask_batch_schedule
+  examples: |
+    - When will the [AI Fellowship](program_name) start?
+    - What are the class timings?
+    - When does the next batch begin?
+    - When will classes open?
+    - I want to know the program start date
+    - When is the next [fellowship](program_name) starting?
+    - What are the [upcoming batches](batch_timing)?
+    - When will [AI Fellowship](program_name) [2025](date_time) be held?
+    - When does enrollment for next batch start?
+    - What is the class schedule?
+    - When will the [2026](date_time) cohort start?
+    - When does the [session](batch_timing) begin?
+    - Are there any [summer](batch_timing) batches?
+    - What are the program commencing dates?
+    - When will the next intake be available?
+    - How much time do I need to give each day?
+    - When will new sessions start?
+    - What is the course duration?
+
+- intent: ask_career_guidance
+  examples: |
+    - I want to build my career in [AI](course_name)
+    - How can I transition to [AI](course_name) field?
+    - I want career guidance for [machine learning](course_name)
+    - I'm passionate about [AI](course_name) and [ML](course_name)
+    - I want to pursue a career in [data science](course_name)
+    - How can this program help my career?
+    - I want to learn [AI](course_name) for career development
+    - What career opportunities are available after this program?
+    - I want to get hired in [AI](course_name) companies
+    - How do I advance my career in [AI](course_name)?
+    - I'm interested in [ML](course_name) career path
+    - What skills do I need for [AI](course_name) jobs?
+    - Can you suggest courses for my career goals?
+    - I want industry-level guidance for [AI](course_name) career
+    - How can I broaden my skills in [AI](course_name)?
+
+- intent: ask_contact
+  examples: |
+    - Please contact me about this course
+    - Can you contact me regarding the program?
+    - I need to talk to someone
+    - How can I get in touch with you?
+    - Send me contact details
+    - I want to speak with someone from the team
+    - Can I get a call for more information?
+    - Who should I contact for inquiries?
+
+- intent: ask_course_fee
+  examples: |
+    - What is the course fee?
+    - Is this [paid](payment_type) or [free](payment_type)?
+    - How much does the program cost?
+    - What is the fee structure?
+    - Are there any charges for enrollment?
+    - Is the [AI Fellowship](program_name) [free](payment_type)?
+    - Do you have [scholarship](payment_type) options?
+    - What are the tuition fees?
+    - Is [financial aid](payment_type) available?
+    - How much do I need to pay?
+    - Are there any [paid](payment_type) [AI](course_name) courses?
+    - What is the cost of [Foundations in AI](program_name)?
+    - Do I need to pay for the foundation course?
+    - What is the pricing for [Microdegree](program_name)?
+    - Are payment plans available?
+
+- intent: ask_course_info
+  examples: |
+    - Tell me about [AI Fellowship](program_name)
+    - What courses do you offer?
+    - I want to know more about this program
+    - What is included in the curriculum?
+    - Can you explain the course structure?
+    - What will I learn in [Foundations in AI](program_name)?
+    - What programs are available?
+    - I want details about [Microdegree in AI](program_name)
+    - Tell me about the syllabus
+    - What topics are covered?
+    - Is this course practical-based?
+    - How is the program structured?
+    - What level of [AI](course_name) is taught?
+    - Can you provide course details?
+    - I want to know about [AI2Go Workshop](program_name)
+    - What are the benefits of this program?
+    - Is this program suitable for beginners?
+    - What makes this course different?
+    - Tell me about the [fellowship](program_name) program
+
+- intent: ask_exam_format
+  examples: |
+    - What type of [exam](exam_type) is it?
+    - Is the [entrance test](exam_type) multiple choice?
+    - Will it be [MCQ](exam_type) or descriptive?
+    - What format is the [entrance exam](exam_type)?
+    - Does the test involve written answers?
+    - Is it objective or subjective?
+    - What kind of questions are in the [exam](exam_type)?
+    - Will there be essay questions?
+    - What's the [exam](exam_type) pattern?
+    - How is the test structured?
+
+- intent: ask_exam_process
+  examples: |
+    - How do I give the [exam](exam_type)?
+    - What is the [exam](exam_type) procedure?
+    - How does the [entrance test](exam_type) work?
+    - What are the steps to take the [exam](exam_type)?
+    - How will I be notified about the [exam](exam_type)?
+    - Can you explain the [exam process](exam_type_process)?
+    - What do I need to do for the [entrance test](exam_type)?
+    - How will the [exam](exam_type) be conducted?
+    - How do I participate in the test?
+
+- intent: ask_exam_result
+  examples: |
+    - When will [exam results](exam_result) be announced?
+    - How do I check my [exam score](exam_result)?
+    - I haven't received my [test results](exam_result)
+    - When will I know my [results](exam_result)?
+    - Where can I see my [entrance test score](exam_result)?
+    - Have the [results](exam_result) been published?
+    - How will I get my [exam results](exam_result)?
+    - When are [results](exam_result) coming out?
+    - Will I be notified about my score?
+
+- intent: ask_location_mode
+  examples: |
+    - Is this [online](study_mode) or [offline](study_mode)?
+    - Are classes [online](study_mode)?
+    - Can I attend [remotely](study_mode)?
+    - Is it [in-person](study_mode) or virtual?
+    - Do you have [online](study_mode) classes?
+    - Is this [remote](study_mode) learning?
+    - Can I join from home?
+    - Are sessions conducted [online](study_mode)?
+    - Is the program virtual?
+    - What is the [learning process](study_mode) method?
+
+- intent: ask_recommendation
+  examples: |
+    - Can I get a [letter of recommendation](recommendation_type)?
+    - Do you provide [recommendation letters](recommendation_type)?
+    - Can I request a [recommendation letter](recommendation_type) after the program?
+    - Are [letters of recommendation](recommendation_type) available?
+    - Can fellows get [recommendation letters](recommendation_type)?
+    - How do I request a [letter of recommendation](recommendation_type)?
+    - Will I receive a [recommendation letter](recommendation_type) after completion?
+    - Can I ask for a [recommendation letter](recommendation_type) for higher studies?
+    - Are internship opportunities provided?
+    - Do you help with job placement?
+
+- intent: ask_seat_availability
+  examples: |
+    - Are there any [seats](seat_status) available?
+    - Is the program full?
+    - Can I still get in?
+    - How many [seats](seat_status) are left?
+    - Is enrollment still open?
+    - Are you accepting more students?
+    - Is there a [waiting list](seat_status)?
+    - Are all [seats](seat_status) taken?
+    - What's the [class capacity](seat_status)?
+    - Are there any remaining [spots](seat_status)?
+
+- intent: ask_selection_process
+  examples: |
+    - What is the [selection criteria](selection_criteria)?
+    - How does the [selection process](selection_criteria) work?
+    - Is selection based on [CV review](selection_criteria) or [entrance exam](exam_type)?
+    - How are candidates evaluated?
+    - Is there an [interview round](selection_criteria)?
+    - What do you look for in applicants?
+    - How competitive is selection?
+    - Do I need to pass an [entrance exam](exam_type)?
+    - What happens after I submit my application?
+    - When will I know if I'm selected?
+    - How many students do you select?
+    - What are the [screening criteria](selection_criteria)?
+    - Is there a limited number of [scholarships](payment_type)?
+    - Does everyone who passes get selected?
+
+- intent: express_interest
+  examples: |
+    - I am interested in [AI](course_name)
+    - I want to learn [machine learning](course_name)
+    - I would like to join [AI Fellowship](program_name)
+    - I want to apply for this program
+    - I want to be part of [Fusemachines](organization)
+    - I'm eager to learn [AI](course_name)
+    - I want to collaborate with the [AI](course_name) team
+    - Interested in [Microdegree in AI](program_name)
+    - I want to enhance my [AI](course_name) knowledge
+    - I'm excited about this program
+    - I want to participate
+    - I'm curious about [AI](course_name) and [ML](course_name)
+    - I want to explore this course
+    - I want to improve my skills
+    - I'm interested in the [workshop](program_name)
+
+- intent: request_technical_support
+  examples: |
+    - I can't upload my documents
+    - I'm having login issues
+    - The [camera](device) is not working for the test
+    - I was logged out during the [exam](exam_type)
+    - I'm getting a 403 error when logging in
+    - I haven't received login credentials
+    - The [platform](platform) is not accessible
+    - I can't submit my [exam](exam_type)
+    - I'm facing [network error](technical_issue)
+    - There's an issue with my account
+    - I can't access [Fuse Classroom](platform)
+    - The [website](platform) crashed during submission
+    - I'm having trouble with [password](technical_issue) reset
+    - My university is not listed in the form
+    - I need help booking a slot
+    - I can't access the [entrance exam](exam_type) section
+    - The [exam](exam_type) page is not loading
+    - Where do I find the [entrance examination](exam_type)?
+    - I can't see the [exam](exam_type) option
+    - How do I access my [entrance test](exam_type)?
+    - The [examination portal](exam_type) is not accessible
+    - I get notifications but can't access [Entrance Examination](exam_type)
+    - Where is the [exam access link](exam_type)?
+    - The [exam section](exam_type) is not showing up
+    - I'm unable to reach the [entrance examination](exam_type)
+    - Where is my [exam link](exam_link)?
+    - I didn't receive the [test link](exam_link)
+    - Can you send the [exam URL](exam_link)?
+    - I'm missing the [exam link](exam_link)
+    - When will I get the [exam link](exam_link)?
+    - I haven't received the [Zoom link](platform) for the [exam](exam_type)
+    - Can you resend the [exam link](exam_link)?
+    - The [test link](exam_link) hasn't arrived
+    - I need the [exam access link](exam_link)
+    - My [exam](exam_type) is soon but no [link](exam_link) yet
+    - How can I book my [exam date](exam_schedule)?
+    - Can I select my [exam date](exam_schedule)?
+    - How do I schedule my [entrance exam](exam_type)?
+    - When can I book my [exam slot](exam_schedule)?
+    - I want to choose my [exam time](exam_schedule)?
+    - What are the available [exam dates](exam_schedule)?
+    - How do I register for an [exam slot](exam_schedule)?
+    - Can I pick my preferred time?
+    - How do I choose my [exam schedule](exam_schedule)?
+    - Can I change my [exam date](exam_schedule)?
+    - What are the steps to apply?
+    - Can you explain the application procedure?
+    - How do I register and attend classes?
+    - What is the application process for [AI Fellowship](program_name)?
+    - Tell me about the enrollment steps
+    - How can I submit my application?
+    - What do I need to do to enroll?
+    - Guide me through the application process
+    - What documents are required to apply?
+    - Explain the registration process
+    - I applied but haven't received confirmation
+    - I haven't received login credentials for [Fuse Classroom](platform)
+    - Where is my confirmation email?
+    - I submitted my application, how do I check the status?
+    - I applied for [AI Fellowship](program_name) but got no response
+    - When will I hear back about my application?
+    - I can't upload my resume to the form, what should I do?
+    - I registered but didn't receive any follow-up
+    - My application shows an error, how can I fix it?
+    - I was rejected last year, can I reapply?
+    - I applied last week and haven't heard anything
+    - I tried to enroll but faced technical issues
+    - Can you confirm if my application was received?
+    - I haven't received an invitation to [Fuse Classroom](platform)
+    - I submitted multiple times, was my application received?
+
+# Lookups
+- lookup: organization
+  examples: |
+    - Fusemachine
+    - Fusemachines
+    - Fusemachines Nepal
+    - Herald College
+    - Islington College
+    - Tribhuvan University
+    - Thapathali Campus
+
+- lookup: program_name
+  examples: |
+    - AI Fellowship
+    - AI2Go Workshop
+    - Foundations in AI
+    - Microdegree in AI
+    - fellowship
+    - workshop
+    - course
+    - program
+
+- lookup: qualification
+  examples: |
+    - BSc CSIT
+    - IT
+    - computer science
+    - engineering
+    - bachelor's
+    - BBA
+    - MSCIT
+
+- lookup: employment_status
+  examples: |
+    - IT professional
+    - software engineer
+    - developer
+    - working professional
+    - student
+
+- lookup: course_name
+  examples: |
+    - AI
+    - ML
+    - machine learning
+    - Python
+    - data science
+    - programming
+    - statistics
+
+- lookup: course_level
+  examples: |
+    - first year
+    - second year
+    - third year
+    - final year
+    - undergraduate
+
+- lookup: platform
+  examples: |
+    - Fuse Classroom
+    - Zoom
+    - website
+    - portal
+
+- lookup: location
+  examples: |
+    - Nepal
+    - India
+    - Kathmandu
+
+- lookup: payment_type
+  examples: |
+    - free
+    - paid
+    - scholarship
+    - financial aid
+
+- lookup: study_mode
+  examples: |
+    - online
+    - offline
+    - remote
+    - in-person
+    - virtual
+
+- lookup: exam_type
+  examples: |
+    - entrance exam
+    - exam
+    - test
+    - MCQ
+    - entrance examination
+
+- lookup: exam_link
+  examples: |
+    - exam link
+    - test link
+    - exam URL
+
+- lookup: exam_result
+  examples: |
+    - results
+    - exam results
+    - test results
+    - score
+
+- lookup: exam_schedule
+  examples: |
+    - exam date
+    - exam slot
+    - exam time
+
+- lookup: recommendation_type
+  examples: |
+    - letter of recommendation
+    - recommendation letter
+
+- lookup: seat_status
+  examples: |
+    - seats
+    - spots
+    - capacity
+
+- lookup: selection_criteria
+  examples: |
+    - selection process
+    - selection criteria
+    - CV review
+    - interview
+
+- lookup: technical_issue
+  examples: |
+    - network error
+    - password
+    - login issue
+    - account problem
+
+- lookup: device
+  examples: |
+    - camera
+    - computer
+    - laptop
+
+- lookup: batch_timing
+  examples: |
+    - next batch
+    - upcoming batch
+    - session
+
+- lookup: date_time
+  examples: |
+    - 2024
+    - 2025
+    - 2026

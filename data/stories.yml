@@ -1,55 +1,206 @@
 version: "3.1"
 
 stories:
-  - story: Complete course inquiry flow
+  # ---------------------------------------------------------------------------
+  # Happy Paths (70%)
+  # ---------------------------------------------------------------------------
+  - story: happy_admission_inquiry
+    metadata:
+      category: happy_path
+      confidence_level: high
+      description: "User expresses interest and gets response"
     steps:
-      - intent: greet
-      - action: utter_greet
+      - intent: express_interest
+      - action: utter_express_interest
+
+  - story: happy_tech_support
+    metadata:
+      category: happy_path
+      confidence_level: high
+      description: "User reports technical issue and gets support response"
+    steps:
+      - intent: request_technical_support
+      - action: utter_technical_support
+
+  - story: happy_course_info_flow
+    metadata:
+      category: happy_path
+      confidence_level: high
+      description: "User asks for course info and then fees"
+    steps:
       - intent: ask_course_info
-      - action: action_handle_multi_intent
-      - intent: ask_fees
-      - action: action_handle_multi_intent
+      - action: utter_course_info
+      - intent: ask_course_fee
+      - action: utter_course_fee
+
+  - story: happy_admission_process_flow
+    metadata:
+      category: happy_path
+      confidence_level: high
+      description: "User asks about admission process then eligibility"
+    steps:
+      - intent: ask_admission_process
+      - action: utter_admission_process
+      - intent: ask_admission_eligibility
+      - action: utter_admission_eligibility
+
+  - story: happy_exam_inquiry_flow
+    metadata:
+      category: happy_path
+      confidence_level: high
+      description: "User asks about exam format then process"
+    steps:
+      - intent: ask_exam_format
+      - action: utter_exam_format
+      - intent: ask_exam_process
+      - action: utter_exam_process
+
+  - story: happy_batch_and_location
+    metadata:
+      category: happy_path
+      confidence_level: high
+      description: "User asks about batch schedule then location mode"
+    steps:
       - intent: ask_batch_schedule
-      - action: action_handle_multi_intent
-      - intent: thank
-      - action: utter_thank
-      - intent: goodbye
-      - action: utter_goodbye
-
-  - story: Quick fee inquiry
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: ask_fees
-      - action: action_handle_multi_intent
-      - intent: thank
-      - action: utter_thank
-
-  - story: Multi-question inquiry
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: ask_fees
-      - action: action_handle_multi_intent
-      - intent: ask_duration
-      - action: action_handle_multi_intent
-      - intent: goodbye
-      - action: utter_goodbye
-
-  - story: Location and schedule inquiry
-    steps:
+      - action: utter_batch_schedule
       - intent: ask_location_mode
-      - action: action_handle_multi_intent
-      - intent: ask_batch_schedule
-      - action: action_handle_multi_intent
-      - intent: thank
-      - action: utter_thank
+      - action: utter_location_mode
 
-  - story: General inquiry
+  # ---------------------------------------------------------------------------
+  # Multi-Intent Flows (10%)
+  # ---------------------------------------------------------------------------
+  - story: multi_intent_fee_schedule
+    metadata:
+      category: multi_intent
+      strategy: parallel
+      confidence_level: medium
+      description: "User asks about fees and schedule in sequence"
     steps:
-      - intent: greet
-      - action: utter_greet
+      - intent: ask_course_fee
+      - action: utter_course_fee
+      - intent: ask_batch_schedule
+      - action: utter_batch_schedule
+
+  - story: multi_intent_eligibility_process
+    metadata:
+      category: multi_intent
+      strategy: sequential
+      confidence_level: medium
+      description: "User asks about eligibility then application process"
+    steps:
+      - intent: ask_admission_eligibility
+      - action: utter_admission_eligibility
+      - intent: ask_admission_process
+      - action: utter_admission_process
+
+  - story: multi_intent_exam_results
+    metadata:
+      category: multi_intent
+      strategy: sequential
+      confidence_level: medium
+      description: "User asks about exam process then results"
+    steps:
+      - intent: ask_exam_process
+      - action: utter_exam_process
+      - intent: ask_exam_result
+      - action: utter_exam_result
+
+  # ---------------------------------------------------------------------------
+  # Career Guidance Flows
+  # ---------------------------------------------------------------------------
+  - story: career_guidance_with_course_info
+    metadata:
+      category: career_flow
+      confidence_level: high
+      description: "User seeks career guidance then course details"
+    steps:
+      - intent: ask_career_guidance
+      - action: utter_career_guidance
       - intent: ask_course_info
-      - action: action_handle_multi_intent
-      - intent: goodbye
-      - action: utter_goodbye
+      - action: utter_course_info
+
+  - story: career_to_eligibility
+    metadata:
+      category: career_flow
+      confidence_level: high
+      description: "User asks career guidance then checks eligibility"
+    steps:
+      - intent: ask_career_guidance
+      - action: utter_career_guidance
+      - intent: ask_admission_eligibility
+      - action: utter_admission_eligibility
+
+  # ---------------------------------------------------------------------------
+  # Selection Process Flows
+  # ---------------------------------------------------------------------------
+  - story: selection_process_with_seats
+    metadata:
+      category: selection_flow
+      confidence_level: high
+      description: "User asks about selection process then seat availability"
+    steps:
+      - intent: ask_selection_process
+      - action: utter_selection_process
+      - intent: ask_seat_availability
+      - action: utter_seat_availability
+
+  - story: selection_to_exam_format
+    metadata:
+      category: selection_flow
+      confidence_level: high
+      description: "User asks about selection then exam format"
+    steps:
+      - intent: ask_selection_process
+      - action: utter_selection_process
+      - intent: ask_exam_format
+      - action: utter_exam_format
+
+  # ---------------------------------------------------------------------------
+  # Technical Support Flows
+  # ---------------------------------------------------------------------------
+  - story: tech_support_then_contact
+    metadata:
+      category: support_flow
+      confidence_level: medium
+      description: "User has tech issue, gets support, then asks for contact"
+    steps:
+      - intent: request_technical_support
+      - action: utter_technical_support
+      - intent: ask_contact
+      - action: utter_contact
+
+  # ---------------------------------------------------------------------------
+  # Interest Expression Flows
+  # ---------------------------------------------------------------------------
+  - story: interest_to_course_info
+    metadata:
+      category: interest_flow
+      confidence_level: high
+      description: "User expresses interest then asks course details"
+    steps:
+      - intent: express_interest
+      - action: utter_express_interest
+      - intent: ask_course_info
+      - action: utter_course_info
+
+  - story: interest_to_fee_inquiry
+    metadata:
+      category: interest_flow
+      confidence_level: high
+      description: "User expresses interest then asks about fees"
+    steps:
+      - intent: express_interest
+      - action: utter_express_interest
+      - intent: ask_course_fee
+      - action: utter_course_fee
+
+  - story: interest_to_eligibility
+    metadata:
+      category: interest_flow
+      confidence_level: high
+      description: "User expresses interest then checks eligibility"
+    steps:
+      - intent: express_interest
+      - action: utter_express_interest
+      - intent: ask_admission_eligibility
+      - action: utter_admission_eligibility

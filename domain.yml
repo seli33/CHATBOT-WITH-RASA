@@ -1,40 +1,346 @@
 version: "3.1"
 
 intents:
-  - ask_batch_schedule
-  - ask_fees
-  - ask_duration
-  - ask_location_mode
-  - ask_course_info
   - greet
-  - thank
   - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_admission_eligibility
+  - ask_admission_process
+  - ask_batch_schedule
+  - ask_career_guidance
+  - ask_contact
+  - ask_course_fee
+  - ask_course_info
+  - ask_exam_format
+  - ask_exam_process
+  - ask_exam_result
+  - ask_location_mode
+  - ask_recommendation
+  - ask_seat_availability
+  - ask_selection_process
+  - express_interest
+  - request_technical_support
 
+entities:
+  - organization
+  - program_name
+  - qualification
+  - employment_status
+  - recommendation_type
+  - seat_status
+  - participant_status
+  - selection_criteria
+  - payment_type
+  - course_name
+  - course_level
+  - platform
+  - location
+  - technical_issue
+  - device
+  - study_mode
+  - date_time
+  - batch_timing
+  - exam_type
+  - exam_result
+  - exam_type_process
+  - exam_schedule
+  - exam_link
 
+slots:
+  organization:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: organization
+
+  program_name:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: program_name
+
+  qualification:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: qualification
+
+  employment_status:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: employment_status
+
+  recommendation_type:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: recommendation_type
+
+  seat_status:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: seat_status
+
+  participant_status:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: participant_status
+
+  selection_criteria:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: selection_criteria
+
+  payment_type:
+    type: categorical
+    values:
+      - free
+      - paid
+      - scholarship
+      - financial aid
+      - free of cost
+      - free course
+      - free program
+      - free fellowship
+      - sponsorship
+      - free training
+      - free workshop
+      - free education
+      - free learning
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: payment_type
+
+  course_name:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: course_name
+
+  course_level:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: course_level
+
+  platform:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: platform
+
+  location:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: location
+
+  technical_issue:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: technical_issue
+
+  device:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: device
+
+  study_mode:
+    type: categorical
+    values:
+      - online
+      - remote
+      - in-person
+      - offline
+      - classroom
+      - virtual
+      - learning process
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: study_mode
+
+  date_time:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: date_time
+
+  batch_timing:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: batch_timing
+
+  exam_type:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: exam_type
+
+  exam_result:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: exam_result
+
+  exam_type_process:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: exam_type_process
+
+  exam_schedule:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: exam_schedule
+
+  exam_link:
+    type: text
+    initial_value: null
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: exam_link
 
 responses:
   utter_greet:
-  - text: "Hello! Welcome to Fuse AI. How can I assist you today?"
-  - text: "Hi there! I'm here to help you with information about our AI courses and programs."
-  - text: "Hello! Looking to learn about our AI programs? I'm here to help!"
-
-  utter_thank:
-  - text: "You're welcome! Feel free to ask if you need anything else."
-  - text: "Happy to help! Let me know if you have any other questions."
-  - text: "My pleasure! Is there anything else you'd like to know?"
+    - text: "Hey! Welcome to Fusemachines! How can I help you today? 😊"
 
   utter_goodbye:
-  - text: "Goodbye! Have a great day!"
-  - text: "See you later! Feel free to reach out anytime."
-  - text: "Take care! We're here whenever you need us."
-  
-  utter_fallback:
-  - text: "I'm sorry, I didn't quite understand that. Could you rephrase your question?"
-  - text: "I'm not sure I understood. Could you try asking in a different way?"
+    - text: "Goodbye! Feel free to reach out anytime. Best of luck with your AI journey! 👋"
+
+  utter_affirm:
+    - text: "Great! Let's move forward. 👍"
+
+  utter_deny:
+    - text: "Got it. Let me know if there's anything else!"
+
+  utter_mood_great:
+    - text: "That's awesome! Keep up the great energy! 🌟"
+
+  utter_mood_unhappy:
+    - text: "I'm sorry to hear that. Remember, every challenge is a learning opportunity. We're here to help! 💪"
+
+  utter_bot_challenge:
+    - text: "I'm a bot, here to help you with Fusemachines programs! 🤖"
+
+  utter_did_that_help:
+    - text: "Did that answer your question?"
+
+  utter_admission_eligibility:
+    - text: "Great background! You seem eligible for our programs. To confirm, I'd recommend checking the specific requirements on our website or applying directly. Need help with the application?"
+
+  utter_admission_process:
+    - text: "Excited to have you! To enroll, visit our website and fill out the application form. The process typically includes submitting your details, taking an entrance exam, and waiting for selection results. Would you like more specific details?"
+
+  utter_batch_schedule:
+    - text: "Batch schedules vary by program. Typically, AI Fellowship programs start 1-2 times per year. Check our website or subscribe to our newsletter for announcements about upcoming batches!"
+
+  utter_career_guidance:
+    - text: "That's a great career path! Our programs are designed to help you build strong AI/ML skills. I'd recommend starting with our Foundations in AI course, then moving to specializations. Need specific program recommendations?"
+
+  utter_contact:
+    - text: "You can reach us at:\n📧 Email: support@fusemachines.com\n📱 Check our website for more contact options\nWe'll get back to you soon!"
+
+  utter_course_fee:
+    - text: "Our AI Fellowship is scholarship-based and FREE for selected candidates! We also offer paid programs. For specific fee details, please check our website or contact us directly."
+
+  utter_course_info:
+    - text: "We offer several programs:\n• Foundations in AI\n• Microdegree in AI\n• AI Fellowship Program\n• AI2Go Workshop\n• Specialization courses\n\nWhich one interests you most? I can share more details!"
+
+  utter_exam_format:
+    - text: "The entrance exam is typically online with multiple-choice questions (MCQs) covering math, programming, and logical reasoning. Duration is usually 2 hours."
+
+  utter_exam_process:
+    - text: "Here's how it works:\n1. Register and book your exam slot\n2. Receive exam link via email\n3. Take the online exam at scheduled time\n4. Submit before time ends\n5. Wait for results (usually 1-2 weeks)\n\nGood luck! 🍀"
+
+  utter_exam_result:
+    - text: "Results are typically announced 1-2 weeks after the exam. You'll receive an email notification. Keep checking your inbox and spam folder!"
+
+  utter_location_mode:
+    - text: "Most of our programs are conducted online, making them accessible from anywhere! Some workshops or sessions may have in-person options in Nepal. Which program are you interested in?"
+
+  utter_recommendation:
+    - text: "Yes! Upon successful completion of our fellowship program, you can request a letter of recommendation. Reach out to your program coordinator for the process."
+
+  utter_seat_availability:
+    - text: "Seat availability varies by program and batch. Check our website or contact us to know about current openings. Applications are reviewed on a rolling basis when open!"
+
+  utter_selection_process:
+    - text: "Selection involves:\n1. Application review\n2. Entrance exam\n3. Interview (for some programs)\n4. Final selection based on overall performance\n\nWe select candidates who show potential and commitment to learning AI!"
+
+  utter_express_interest:
+    - text: "That's wonderful! We're excited to have passionate learners like you. What would you like to know more about - program details, application process, or eligibility?"
+
+  utter_technical_support:
+    - text: "Sorry for the technical trouble! Please email support@fusemachines.com with:\n• Your full name\n• Issue description\n• Screenshots (if possible)\n\nOur team will help you resolve it quickly!"
+
+  # Multi-intent fallback template
+  utter_default_multi:
+    - text: "I noticed you have multiple questions. Let me address them one by one."
+
+  # Email Escalation Response (Static)
+  utter_email_escalation:
+    - text: "This request requires review by the Fusemachines team.\nPlease email support@fusemachines.com with relevant details, and the team will assist you further."
+
 actions:
   - action_handle_multi_intent
 
-  
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

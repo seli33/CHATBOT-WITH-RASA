@@ -12,3 +12,4 @@ rasa_env/
 env/
 venv/
 .rasa/
+models/

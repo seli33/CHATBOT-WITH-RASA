@@ -1,49 +1,138 @@
-# rules.yml
 version: "3.1"
 
 rules:
-  - rule: Say goodbye anytime the user says goodbye
+  # ---------------------------------------------------------------------------
+  # Conversational Rules
+  # ---------------------------------------------------------------------------
+  - rule: Respond to greet
     steps:
-    - intent: goodbye
-    - action: utter_goodbye
+      - intent: greet
+      - action: utter_greet
 
+  - rule: Respond to goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Respond to bot challenge
+    steps:
+      - intent: bot_challenge
+      - action: utter_bot_challenge
+
+  - rule: Respond to affirm
+    steps:
+      - intent: affirm
+      - action: utter_affirm
+
+  - rule: Respond to deny
+    steps:
+      - intent: deny
+      - action: utter_deny
+
+  - rule: Respond to mood great
+    steps:
+      - intent: mood_great
+      - action: utter_mood_great
+
+  - rule: Respond to mood unhappy
+    steps:
+      - intent: mood_unhappy
+      - action: utter_mood_unhappy
+
+  # ---------------------------------------------------------------------------
+  # Fallback Rules (Deterministic - No LLM)
+  # ---------------------------------------------------------------------------
+  - rule: NLU Fallback (Default)
+    steps:
+      - intent: nlu_fallback
+      - action: action_handle_multi_intent
+
+  # ---------------------------------------------------------------------------
+  # Core Application Rules
+  # ---------------------------------------------------------------------------
   
-  - rule: Greet the user
+  # Admission & Application
+  - rule: Answer Admission Eligibility
     steps:
-    - intent: greet
-    - action: utter_greet
+      - intent: ask_admission_eligibility
+      - action: utter_admission_eligibility
 
-  - rule: Thank the user
+  - rule: Answer Admission Process
     steps:
-    - intent: thank
-    - action: utter_thank
+      - intent: ask_admission_process
+      - action: utter_admission_process
 
-    # Rule for handling fees
-  - rule: Ask course fees
-    steps:
-      - intent: ask_fees
-      - action: action_handle_multi_intent
-
-  # Rule for handling batch schedule
-  - rule: Ask batch schedule
-    steps:
-      - intent: ask_batch_schedule
-      - action: action_handle_multi_intent
-
-  # Rule for handling course duration
-  - rule: Ask course duration
-    steps:
-      - intent: ask_duration
-      - action: action_handle_multi_intent
-
-  # Rule for handling location/mode
-  - rule: Ask location/mode
-    steps:
-      - intent: ask_location_mode
-      - action: action_handle_multi_intent
-
-  # Rule for handling course info
-  - rule: Ask course info
+  # Program Information
+  - rule: Answer Course Info
     steps:
       - intent: ask_course_info
-      - action: action_handle_multi_intent
+      - action: utter_course_info
+
+  - rule: Answer Course Fee
+    steps:
+      - intent: ask_course_fee
+      - action: utter_course_fee
+
+  - rule: Answer Batch Schedule
+    steps:
+      - intent: ask_batch_schedule
+      - action: utter_batch_schedule
+
+  - rule: Answer Location Mode
+    steps:
+      - intent: ask_location_mode
+      - action: utter_location_mode
+
+  # Exam Related
+  - rule: Answer Exam Format
+    steps:
+      - intent: ask_exam_format
+      - action: utter_exam_format
+
+  - rule: Answer Exam Process
+    steps:
+      - intent: ask_exam_process
+      - action: utter_exam_process
+
+  - rule: Answer Exam Result
+    steps:
+      - intent: ask_exam_result
+      - action: utter_exam_result
+
+  # Selection & Seats
+  - rule: Answer Selection Process
+    steps:
+      - intent: ask_selection_process
+      - action: utter_selection_process
+
+  - rule: Answer Seat Availability
+    steps:
+      - intent: ask_seat_availability
+      - action: utter_seat_availability
+
+  # Career & Support
+  - rule: Answer Career Guidance
+    steps:
+      - intent: ask_career_guidance
+      - action: utter_career_guidance
+
+  - rule: Answer Recommendation
+    steps:
+      - intent: ask_recommendation
+      - action: utter_recommendation
+
+  - rule: Answer Contact
+    steps:
+      - intent: ask_contact
+      - action: utter_contact
+
+  # Interest & Support
+  - rule: Handle Express Interest
+    steps:
+      - intent: express_interest
+      - action: utter_express_interest
+
+  - rule: Handle Technical Support
+    steps:
+      - intent: request_technical_support
+      - action: utter_technical_support
