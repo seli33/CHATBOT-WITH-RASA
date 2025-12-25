@@ -1,0 +1,6 @@
+langchain-community
+qdrant-client
+python-dotenv
+rapidfuzz
+torch
+transformers
